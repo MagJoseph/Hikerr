@@ -12,7 +12,7 @@
 ***
 ### ***Technologies***
 #### This has been accomplished by:
-### PostgreSQL, MongoDB, React, HTML, CSS
+### PostgreSQL, Node.js, React, Express.js, CSS
 <img width="865" alt="Screen Shot 2022-04-01 at 9 30 00 AM" src="https://repository-images.githubusercontent.com/141744474/1ce68080-769e-11ea-8f62-d743905db95e">
 
 ***
