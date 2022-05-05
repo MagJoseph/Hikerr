@@ -1,8 +1,8 @@
-##Hikrr
+## Hikerr 
 
-## Date: 5/04/2022
+##  Date: 5/04/2022
 
-### By: Magdalena Joseph
+## By: Magdalena Joseph
 
 <img width="865" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
 ***
