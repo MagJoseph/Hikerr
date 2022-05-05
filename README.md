@@ -8,7 +8,7 @@
 ***
 
 ### ***Description***
-#### "Hikrr" is a hiking web application. You can browse different trail heads, browse photos, maps and leave comments. Google maps is included to help you find parking and your starting location. There's a User Authentication and the app has full CRUD functionality. You can register and after logging in you can make add hikes, photos, update them or delete them. There is a page with a timer. You can record your hiking time and save in in the app. Are you ready for your next outdoor adventure? 
+#### "Hikrr" is a hiking web application. You can browse different trails, browse photos, maps and leave comments. I'm using Google Maps API to help the user find the trail head location. There's a User Authentication and the app has full CRUD functionality. You can register and after logging in you can make add hikes, photos, update them or delete them. There is a page with a timer. You can record your hiking time and save in in the app. Are you ready for your next outdoor adventure? 
 ***
 ### ***Technologies***
 #### This has been accomplished by:
