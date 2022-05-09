@@ -14,17 +14,32 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 function App() {
-  const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState('')
+  const [authenticated, toggleAuthenticated] = useState(false);
+  const [user, setUser] = useState("");
 
   let navigate = useNavigate();
-  
-  const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-    toggleAuthenticated(true)
-}
 
+  //If a token exists, sends token to localStorage to persist logged in user
+  const checkToken = async () => {
+    const user = await CheckSession();
+    setUser(user);
+    toggleAuthenticated(true);
+  };
+
+  const handleLogOut = () => {
+    setUser(null);
+    toggleAuthenticated(false);
+    localStorage.clear();
+    navigate("/home");
+  };
+
+  // Check if token exists before requesting to validate the token
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken
+    }
+  }, [])
 
   return (
     <div className="App">
