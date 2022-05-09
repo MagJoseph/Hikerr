@@ -17,7 +17,7 @@ let navigate = useNavigate();
   });
     
      const getNewPost = async () => {
-       await axios.get({
+       await axios({
          url: `http://localhost:3001/posts/${id}`,
          method: "post",
          data: newPost,
