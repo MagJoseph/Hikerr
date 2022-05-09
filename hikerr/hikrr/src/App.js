@@ -4,10 +4,12 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import PostDetails from './components/PostDetails';
 import MyHikes from './pages/MyHikes';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
