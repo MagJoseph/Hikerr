@@ -7,9 +7,11 @@ import axios from 'axios';
 
 
 const PostDetails = (props) => {
- const [selectedPost, setSelectedPost] = useState('');
- const [comments, setComment] = useState();
+const [selectedPost, setSelectedPost] = useState('');
+const [comments, setComment] = useState('');
 
+   
+    
  let { id } = useParams();
 
  //get posts by id
@@ -18,7 +20,9 @@ const PostDetails = (props) => {
      console.log(result.data);
      console.log(result.data.onePost);
    setSelectedPost(result.data.onePost);
-   setComment(result.data.getComments[0]);
+     setComment(result.data.getComments);
+   
+     
  };
 
  useEffect(() => {
@@ -26,7 +30,7 @@ const PostDetails = (props) => {
  }, []);
 
     
- return  ( selectedPost && comments ) ?  (
+ return ( selectedPost && comments ) ?  (
    <div className="post-details">
      <p className="post-title"> {selectedPost.title}</p>
      <img src={selectedPost.imgUrl} />
