@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React from 'react'
+import Client from "../services/api";
 
 const CreatePost = () => {
 
@@ -17,7 +18,7 @@ let navigate = useNavigate();
   });
     
      const getNewPost = async () => {
-       await axios({
+       await Client({
          url: `http://localhost:3001/posts/${id}`,
          method: "post",
          data: newPost,

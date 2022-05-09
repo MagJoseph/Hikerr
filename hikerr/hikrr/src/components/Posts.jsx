@@ -2,7 +2,7 @@ import React from 'react'
 import PostsItem from './PotsItem'
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"; 
-import axios from 'axios';
+import Client from "../services/api";
 
 const Posts = () => {
 
@@ -17,7 +17,7 @@ const showPost = (posts) => {
  } 
   
 const getPosts = async () => {
-  const list = await axios.get(`http://localhost:3001/posts`);
+  const list = await Client.get(`http://localhost:3001/posts`);
   console.log(list.data);
   setPosts(list.data);
 }; 

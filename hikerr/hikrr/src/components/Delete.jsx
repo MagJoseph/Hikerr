@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Client from "../services/api";
 
 const Delete = (props) => {
   let navigate = useNavigate();
 
   const deletePost = async () => {
-    await axios.delete(`posts/${props.postId}`);
+    await Client.delete(`posts/${props.postId}`);
   };
 
   const handleDelete = () => {

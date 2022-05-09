@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import PostDetails from './components/PostDetails';
 import MyHikes from './pages/MyHikes';
 import Navbar from './components/Navbar';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/posts/postdetail/:id" element={<PostDetails />} />
-          <Route path="/myhikes" element={<MyHikes /> } />
+          <Route path="/myhikes" element={<MyHikes />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </main>
     </div>

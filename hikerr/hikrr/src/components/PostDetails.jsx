@@ -3,7 +3,7 @@ import CommentsItem from './CommentsItem'
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import Client from "../services/api";
 
 
 const PostDetails = (props) => {
@@ -16,7 +16,7 @@ const [comments, setComment] = useState('');
 
  //get posts by id
  const getPost = async () => {
-   const result = await axios.get(`http://localhost:3001/posts/postdetail/${id}`);
+   const result = await Client.get(`http://localhost:3001/posts/postdetail/${id}`);
      console.log(result.data);
      console.log(result.data.onePost);
    setSelectedPost(result.data.onePost);

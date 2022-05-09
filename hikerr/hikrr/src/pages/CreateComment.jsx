@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import Client from "../services/api";
 
 const CreateComment = () => {
 
@@ -17,7 +17,7 @@ const CreateComment = () => {
 
     const getNewComment = async () => {
       console.log(newComment);
-      await axios({
+      await Client({
         url: `http://localhost:3001//${id}`,
         method: "post",
         data: newComment,

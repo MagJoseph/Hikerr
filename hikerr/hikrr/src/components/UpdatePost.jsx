@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Client from "../services/api";
 
 
 const UpdatePost = (props) => {
@@ -17,7 +17,7 @@ const UpdatePost = (props) => {
 
   //select a post by id to update
   const getPostToUpdate = async () => {
-    await axios.put(`http://localhost:3001/posts/${props.postId}`, {
+    await Client.put(`http://localhost:3001/posts/${props.postId}`, {
         title: title,
         imgUrl: imgUrl,
         content: content,
