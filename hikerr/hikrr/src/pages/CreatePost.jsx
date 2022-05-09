@@ -10,9 +10,10 @@ let navigate = useNavigate();
     //set state of new post
   const [newPost, setNewPost] = useState({
       title: "",
-      tag: "",
+      imgUrl: "",
+      rating: "",
       content: "",
-      image: "",
+      mapImg: "",
   });
     
      const getNewPost = async () => {
@@ -37,8 +38,55 @@ const handleSubmit = (e) => {
 };    
     
   return (
-    <div>CreatePost</div>
-  )
+    <div>
+      <h2 className="new-post">ADD A NEW POST</h2>
+      <div className="form-form">
+        <form className="submit-form" onSubmit={handleSubmit}>
+          <input
+            className="input"
+            type="text"
+            value={newPost.title}
+            onChange={handleChange}
+            name={"title"}
+            placeholder={"Title"}
+          />
+          <input
+            className="input"
+            type="text"
+            value={newPost.imgUrl}
+            onChange={handleChange}
+            name={"imgUrl"}
+            placeholder={"Image Url"}
+          />
+          <input
+            className="input"
+            type="text"
+            value={newPost.content}
+            onChange={handleChange}
+            name={"content"}
+            placeholder={"Content"}
+          />
+          <input
+            className="input"
+            type="text"
+            value={newPost.rating}
+            onChange={handleChange}
+            name={"rating"}
+            placeholder={"Difficulty rating"}
+          />
+          <input
+            className="in-cont input"
+            type="text"
+            value={newPost.mapImg}
+            onChange={handleChange}
+            name={"mapImg"}
+            placeholder={"Map Image Url"}
+          />
+          <button className="s-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default CreatePost
