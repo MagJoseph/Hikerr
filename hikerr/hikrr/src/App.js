@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar handleLogOut={handleLogOut} />
       <main>
         <Routes>
           <Route
@@ -66,9 +66,12 @@ function App() {
             element={<MyHikes user={user} authenticated={authenticated} />}
           />
           <Route path="/search" element={<Search />} />
-          <Route path="/posts/postdetail/:id/createcomment" element={<CreateComment />} />
+          <Route
+            path="/posts/postdetail/:id/createcomment"
+            element={<CreateComment />}
+          />
           <Route path="/createpost" element={<CreatePost user={user} />} />
-          <Route path="/yourrecordings" element={<YourRecordings /> } />
+          <Route path="/yourrecordings" element={<YourRecordings />} />
         </Routes>
       </main>
     </div>

@@ -9,7 +9,7 @@ const Home = () => {
         <div className="home-title">Where your adventure begins</div>
       </div>
       <div className="link-wrapper centered">
-        <Link to="/posts" className="item">Hiking Trails</Link>
+        {/* <Link to="/posts" className="item">Hiking Trails</Link> */}
         <Link to="/register" className="item1">Register</Link>
         <Link to="/login" className="item1">Login</Link>
       </div>
