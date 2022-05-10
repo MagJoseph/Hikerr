@@ -43,19 +43,19 @@ const CreateComment = () => {
         <h2 className="comment-form">Add Your Comment</h2>
         <form className="submit-container" onSubmit={submitForm}>
           <input
-            className="input comm"
+            className="input"
             type="text"
             value={newComment.username}
             onChange={handleChange}
-            name={"name"}
+            name={"username"}
             placeholder={"Your name here"}
           />
           <input
-            className="input comm1"
+            className="input"
             type="text"
             value={newComment.comment}
             onChange={handleChange}
-            name={"content"}
+            name={"comment"}
             placeholder={"Your comment here"}
           />
           <button className="s-btn">Submit</button>

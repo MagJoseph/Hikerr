@@ -13,6 +13,7 @@ import CreateComment from './pages/CreateComment';
 import CreatePost from './pages/CreatePost';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import YourRecordings from './pages/YourRecordings';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -67,6 +68,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/posts/postdetail/:id/createcomment" element={<CreateComment />} />
           <Route path="/createpost" element={<CreatePost user={user} />} />
+          <Route path="/yourrecordings" element={<YourRecordings /> } />
         </Routes>
       </main>
     </div>
