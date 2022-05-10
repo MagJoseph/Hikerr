@@ -27,9 +27,8 @@ const Login = (props) => {
   };
   return (
     <div>
-      <Sidebar />
       <div className="login">
-        <h1 className="reg-title">MINDIFY</h1>
+        <h1 className="reg-title">Hikrr</h1>
         <form className="log" onSubmit={handleSubmit}>
           <div className="welcome"> Please Log in</div>
           <div className="input-wrapper">
