@@ -2,37 +2,71 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+ span {
+  font-family: 'Koulen',
+  cursive;
+  font-size: 7rem;
+  position: relative;
+  display: inline-block;
+  color:  black;
+  text-transform: uppercase;
+  animation: wave 1s 1;
+  padding: 15px;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes wave {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
+ font-family: 'Koulen', cursive;
+ font-size: 3rem;
+ animation: spacing 2s 1;
+ animation-delay: 0.5s;
+ margin: 25px;
+}
+
+@keyframes spacing {
+  50% {
+    letter-spacing: 10px;
+  }
+}
+
+.home {
+  background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80');
+  height: 900px;
+}
+
+.landing {
+  padding: 15px;
+  font-size: 20px;
+  margin: 20px;
+  background-color: rgb(215, 234, 75);
+  width: 200px;
+}
+
+.landing:hover {
+  box-shadow: rgba(73, 87, 32, 0.8) 15px 15px;
+  
+}
+
+.link {
+text-decoration: none;
+color: black;
+}
+
+.land-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
 }
