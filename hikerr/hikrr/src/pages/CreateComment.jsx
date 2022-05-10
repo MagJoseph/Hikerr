@@ -8,8 +8,8 @@ const CreateComment = () => {
     let navigate = useNavigate();
 
     const [newComment, setNewComment] = useState({
-      name: "",
-      content: "",
+      username: "",
+      comment: "",
       postId: [],
     });
 
@@ -18,7 +18,7 @@ const CreateComment = () => {
     const getNewComment = async () => {
       console.log(newComment);
       await Client({
-        url: `http://localhost:3001//${id}`,
+        url: `http://localhost:3001/comments/${id}`,
         method: "post",
         data: newComment,
       });
@@ -37,28 +37,33 @@ const CreateComment = () => {
    window.location.reload(false);
  };
 
-  <div className="comment-container">
-    <h2 className="comment-form">Add Your Comment</h2>
-    <form className="submit-container" onSubmit={submitForm}>
-      <input
-        className="input comm"
-        type="text"
-        value={newComment.name}
-        onChange={handleChange}
-        name={"name"}
-        placeholder={"Your name here"}
-      />
-      <input
-        className="input comm1"
-        type="text"
-        value={newComment.content}
-        onChange={handleChange}
-        name={"content"}
-        placeholder={"Your comment here"}
-      />
-      <button className="s-btn">Submit</button>
-    </form>
-  </div>;
+  return (
+    <div>
+      <div className="comment-container">
+        <h2 className="comment-form">Add Your Comment</h2>
+        <form className="submit-container" onSubmit={submitForm}>
+          <input
+            className="input comm"
+            type="text"
+            value={newComment.username}
+            onChange={handleChange}
+            name={"name"}
+            placeholder={"Your name here"}
+          />
+          <input
+            className="input comm1"
+            type="text"
+            value={newComment.comment}
+            onChange={handleChange}
+            name={"content"}
+            placeholder={"Your comment here"}
+          />
+          <button className="s-btn">Submit</button>
+        </form>
+      </div>
+      ;
+    </div>
+  );
 };
 
 export default CreateComment;

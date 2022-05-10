@@ -65,7 +65,7 @@ function App() {
             element={<MyHikes user={user} authenticated={authenticated} />}
           />
           <Route path="/search" element={<Search />} />
-          <Route path="/createcomment" element={<CreateComment />} />
+          <Route path="/posts/postdetail/:id/createcomment" element={<CreateComment />} />
           <Route path="/createpost" element={<CreatePost user={user} />} />
         </Routes>
       </main>

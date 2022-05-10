@@ -39,7 +39,8 @@ const MyHikes = (props) => {
   return posts && userInfo ? (
     <div>
       <div>
-        <h1>{user.username}</h1>
+        <h1> Hello {user.username}!</h1>
+        <h2>Your Hikes:</h2>
       </div>
       <div>
         {posts.map((post) => (
@@ -68,7 +69,7 @@ const MyHikes = (props) => {
       </div>
     </div>
   ) : (
-    <div></div>
+    <div class="new-hike">Your newly added hikes will appear here!</div>
   );
 };
 

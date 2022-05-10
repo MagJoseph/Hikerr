@@ -49,7 +49,7 @@ const [comments, setComment] = useState('');
          </div>
        ))}
          </div>
-         <Link className="add-comment" to={`/posts/postdetail/${selectedPost.id}/commentsform`}>
+         <Link className="add-comment" to={`/posts/postdetail/${selectedPost.id}/createcomment`}>
        Add your comment here</Link>
     </div>
  ) : null;    
