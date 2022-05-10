@@ -10,6 +10,7 @@ import MyHikes from './pages/MyHikes';
 import Navbar from './components/Navbar';
 import Search from './components/Search';
 import CreateComment from './pages/CreateComment';
+import CreatePost from './pages/CreatePost';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -37,7 +38,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      checkToken
+      checkToken()
     }
   }, [])
 
@@ -46,12 +47,26 @@ function App() {
       <Navbar />
       <main>
         <Routes>
+          <Route
+            path="/login"
+            element={
+              <Login
+                setUser={setUser}
+                toggleAuthenticated={toggleAuthenticated}
+              />
+            }
+          />
+          <Route path="/register" element={<Register />} />
           <Route path="/" element={<Home />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/posts/postdetail/:id" element={<PostDetails />} />
-          <Route path="/myhikes" element={<MyHikes />} />
+          <Route
+            path="/myhikes"
+            element={<MyHikes user={user} authenticated={authenticated} />}
+          />
           <Route path="/search" element={<Search />} />
           <Route path="/createcomment" element={<CreateComment />} />
+          <Route path="/createpost" element={<CreatePost user={user} />} />
         </Routes>
       </main>
     </div>

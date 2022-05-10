@@ -11,7 +11,7 @@ const Delete = (props) => {
 
   const handleDelete = () => {
     deletePost();
-    navigate("/home");
+    navigate("/posts");
     window.location.reload(false);
   };
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import PostsItem from './PotsItem'
+import PostItem from './PostItem'
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"; 
 import Client from "../services/api";
@@ -36,7 +36,7 @@ useEffect(() => {
           className="home-container"
           onClick={() => showPost(post)}
           key={post.id}>
-             <PostsItem
+             <PostItem
                title={post.title}
                image={post.imgUrl}
                content={post.content}

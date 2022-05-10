@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import React from 'react'
 import Client from "../services/api";
 
-const CreatePost = () => {
+const CreatePost = (props) => {
 
+   const userId = props.user.id
+  
 
 let navigate = useNavigate();
 
@@ -19,7 +21,7 @@ let navigate = useNavigate();
     
      const getNewPost = async () => {
        await Client({
-         url: `http://localhost:3001/posts/${id}`,
+         url: `http://localhost:3001/posts/${userId}`,
          method: "post",
          data: newPost,
        });
@@ -34,13 +36,13 @@ const handleSubmit = (e) => {
   e.preventDefault();
   getNewPost();
   //returns back to posts after submitting
-  navigate("/posts");
+  navigate("/myhikes");
   window.location.reload(false);
 };    
     
   return (
     <div>
-      <h2 className="new-post">ADD A NEW POST</h2>
+      <h2 className="new-post">Add A New Post</h2>
       <div className="form-form">
         <form className="submit-form" onSubmit={handleSubmit}>
           <input
@@ -87,7 +89,8 @@ const handleSubmit = (e) => {
         </form>
       </div>
     </div>
-  );
+) 
+
 }
 
 export default CreatePost
