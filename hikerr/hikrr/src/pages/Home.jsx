@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import Slide from "react-reveal/Slide";
 
 const Home = () => {
   return (
     <div className="home">
       <div className="home-container">
-        <span>H</span>
-        <span>I</span>
-        <span>K</span>
-        <span>R</span>
-        <span>R</span>
+        <Slide left>
+          <h1>HIKRR</h1>
+        </Slide>
         <div className="title">Where your adventure begins</div>
       </div>
       <div className="link-wrapper centered">

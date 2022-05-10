@@ -4,7 +4,7 @@
 
 
 
- span {
+ h1 {
   font-family: 'Koulen',
   cursive;
   font-size: 7rem;
@@ -12,21 +12,11 @@
   display: inline-block;
   color:  black;
   text-transform: uppercase;
-  animation: wave 1s 1;
-  padding: 15px;
+ padding: 15px;
   margin: 20px;
+  letter-spacing: 35px;
 }
 
-@keyframes wave {
-  0%,
-  40%,
-  100% {
-    transform: translateY(0)
-  }
-  20% {
-    transform: translateY(-20px)
-  }
-}
 
 .title {
  font-family: 'Koulen', cursive;
@@ -53,6 +43,7 @@
   margin: 20px;
   background-color: rgb(215, 234, 75);
   width: 200px;
+  border-radius: 15px;
 }
 
 .landing:hover {
@@ -69,4 +60,58 @@ color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.form {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  padding: 10px;
+  width: 450px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px,
+  rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px,
+  rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.register {
+    background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80');
+    height: 900px;
+ 
+}
+
+.input1 {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+}
+
+.sub-btn {
+    padding: 10px;
+    font-size: 16px;
+    margin: 20px;
+    background-color: rgb(215, 234, 75);
+    width: 200px;
+    border-radius: 15px;
+    color: black;
+}
+
+.sub-btn:hover {
+  box-shadow: rgba(73, 87, 32, 0.8) 15px 15px;
+
 }

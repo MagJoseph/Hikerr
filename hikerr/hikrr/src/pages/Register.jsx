@@ -93,97 +93,100 @@ const alertUser = () => {
 
   return (
     <div>
-      <div className="card-overlay centered">
-        <h1 className="reg-title">Hikrr</h1>
-        <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper1">
-            <label htmlFor="name">First Name</label>
-            <br></br>
-            <input
-              className="input1"
-              onChange={handleChange}
-              name="firstName"
-              type="text"
-              placeholder="Your Name"
-              value={formValues.firstName}
-              required
-            />
-          </div>
-          <div className="input-wrapper1">
-            <label htmlFor="name">Last Name</label>
-            <br></br>
-            <input
-              className="input1"
-              onChange={handleChange}
-              name="lastName"
-              type="text"
-              placeholder="Your Name"
-              value={formValues.lastName}
-              required
-            />
-          </div>
-          <div className="input-wrapper1">
-            <label htmlFor="username">Username</label>
-            <br></br>
-            <input
-              className={usedInfo ? "input1" : "input1 user-alert"}
-              onChange={handleChange}
-              name="username"
-              type="text"
-              placeholder="Your Name"
-              value={formValues.username}
-              required
-            />
-          </div>
-          <div className="input-wrapper1">
-            <label htmlFor="email">Email</label>
-            <br></br>
-            <input
-              className={usedInfo ? "input1" : "input1 red-alert"}
-              onChange={handleChange}
-              name="email"
-              type="email"
-              placeholder="example@example.com"
-              value={formValues.email}
-              required
-            />
-          </div>
-          <div className="input-wrapper1">
-            <label htmlFor="password">Password</label>
-            <br></br>
-            <input
-              className="input1"
-              onChange={handleChange}
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={formValues.password}
-              required
-            />
-          </div>
-          <div className="input-wrapper1">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <br></br>
-            <input
-              className="input1"
-              onChange={handleChange}
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm password"
-              value={formValues.confirmPassword}
-              required
-            />
-          </div>
-          <button
-            className="s-btn1"
-            disabled={
-              !formValues.email ||
-              (!formValues.password &&
-                formValues.confirmPassword === formValues.password)
-            }>
-            Register
-          </button>
-        </form>
+      <div className="register">
+        <div className="centered">
+          <h1 className="reg-title">Hikrr</h1>
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="input-wrapper1">
+              <label htmlFor="name">First Name</label>
+              <br></br>
+              <input
+                className="input1"
+                onChange={handleChange}
+                name="firstName"
+                type="text"
+                placeholder="Your Name"
+                value={formValues.firstName}
+                required
+              />
+            </div>
+            <div className="input-wrapper1">
+              <label htmlFor="name">Last Name</label>
+              <br></br>
+              <input
+                className="input1"
+                onChange={handleChange}
+                name="lastName"
+                type="text"
+                placeholder="Your Name"
+                value={formValues.lastName}
+                required
+              />
+            </div>
+            <div className="input-wrapper1">
+              <label htmlFor="username">Username</label>
+              <br></br>
+              <input
+                className={usedInfo ? "input1" : "input1 user-alert"}
+                onChange={handleChange}
+                name="username"
+                type="text"
+                placeholder="Your Name"
+                value={formValues.username}
+                required
+              />
+            </div>
+            <div className="input-wrapper1">
+              <label htmlFor="email">Email</label>
+              <br></br>
+              <input
+                className={usedInfo ? "input1" : "input1 red-alert"}
+                onChange={handleChange}
+                name="email"
+                type="email"
+                placeholder="example@example.com"
+                value={formValues.email}
+                required
+              />
+            </div>
+            <div className="input-wrapper1">
+              <label htmlFor="password">Password</label>
+              <br></br>
+              <input
+                className="input1"
+                onChange={handleChange}
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={formValues.password}
+                required
+              />
+            </div>
+            <div className="input-wrapper1">
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <br></br>
+              <input
+                className="input1"
+                onChange={handleChange}
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm password"
+                value={formValues.confirmPassword}
+                required
+              />
+            </div>
+            <button
+              className="sub-btn"
+              disabled={
+                !formValues.email ||
+                (!formValues.password &&
+                  formValues.confirmPassword === formValues.password)
+              }
+            >
+              Register
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
