@@ -1,4 +1,6 @@
 import React from 'react'
+import Client from "../services/api";
+
 
 const Search = () => {
   return (

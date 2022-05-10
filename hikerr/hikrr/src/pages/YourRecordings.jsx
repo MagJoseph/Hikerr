@@ -40,21 +40,58 @@ const YourRecordings = () => {
       console.log(e.target.value);
     };
 
-
+      const submitForm = (e) => {
+        e.preventDefault();
+        getNewTiming();
+        navigate(`http://localhost:3001/yourrecordings`);
+        window.location.reload(false);
+      };
 
 
   return (
     <div>
-      <h1>Your Recordings:</h1>
-      {times.map((time) => (
-        <div className="times-container" key={time.id}>
-          <RecordingItem
-            name={time.name}
-            content={time.content}
-            distance={time.distance}
+      <div>
+        <h1>Your Recordings:</h1>
+        {times.map((time) => (
+          <div className="times-container" key={time.id}>
+            <RecordingItem
+              name={time.name}
+              content={time.content}
+              distance={time.distance}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="rec-container">
+        <h2 className="rec-form">Add a New Recording</h2>
+        <form className="submit-container" onSubmit={submitForm}>
+          <input
+            className="input"
+            type="text"
+            value={newRecording.name}
+            onChange={handleChange}
+            name={"name"}
+            placeholder={"Trail name"}
           />
-        </div>
-      ))}
+          <input
+            className="input"
+            type="text"
+            value={newRecording.content}
+            onChange={handleChange}
+            name={"content"}
+            placeholder={"Your Time"}
+          />
+          <input
+            className="input"
+            type="text"
+            value={newRecording.distance}
+            onChange={handleChange}
+            name={"distance"}
+            placeholder={"Distance"}
+          />
+          <button className="s-btn">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
