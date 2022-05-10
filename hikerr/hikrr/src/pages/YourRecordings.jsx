@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Client from "../services/api";
 import RecordingItem from '../components/RecordingItem';
 import { useNavigate } from 'react-router-dom'
+import Stopwatch from '../components/Stopwatch';
 
 const YourRecordings = () => {
 
@@ -50,18 +51,7 @@ const YourRecordings = () => {
 
   return (
     <div>
-      <div>
-        <h1>Your Recordings:</h1>
-        {times.map((time) => (
-          <div className="times-container" key={time.id}>
-            <RecordingItem
-              name={time.name}
-              content={time.content}
-              distance={time.distance}
-            />
-          </div>
-        ))}
-      </div>
+      <Stopwatch />
       <div className="rec-container">
         <h2 className="rec-form">Add a New Recording</h2>
         <form className="submit-container" onSubmit={submitForm}>
@@ -91,6 +81,18 @@ const YourRecordings = () => {
           />
           <button className="s-btn">Submit</button>
         </form>
+      </div>
+      <div>
+        <h1>Your Recordings:</h1>
+        {times.map((time) => (
+          <div className="times-container" key={time.id}>
+            <RecordingItem
+              name={time.name}
+              content={time.content}
+              distance={time.distance}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

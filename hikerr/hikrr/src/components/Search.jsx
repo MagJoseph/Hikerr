@@ -28,7 +28,7 @@ const Search = () => {
           type="text"
           name="search"
           value={searchQuery}
-          placeholder="Search Apartments"
+          placeholder="Search Hikes"
           onChange={handleChange}
         ></input>
         <button type="submit">Search</button>
