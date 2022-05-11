@@ -14,7 +14,7 @@ import CreatePost from './pages/CreatePost';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import YourRecordings from './pages/YourRecordings';
-import Map from './components/Map'
+import MapContainer from './components/MapContainer'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -73,7 +73,7 @@ function App() {
           />
           <Route path="/createpost" element={<CreatePost user={user} />} />
           <Route path="/yourrecordings" element={<YourRecordings />} />
-          <Route path="/map" element={ <Map />} />
+          <Route path="/map" element={ <MapContainer />} />
         </Routes>
       </main>
     </div>
