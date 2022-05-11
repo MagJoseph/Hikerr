@@ -11,7 +11,8 @@ const Navbar = ({ handleLogOut }) => {
           <Link to="/register">Register</Link>
           <Link to="/createpost">Add New Post</Link>
           <Link to="/yourrecordings">Your Recordings</Link>
-          <Link to="/search">Search</Link>
+      <Link to="/search">Search</Link>
+      <Link to="/map">Maps</Link>
           <Link onClick={handleLogOut} to="/"></Link>
     </div>
   )
