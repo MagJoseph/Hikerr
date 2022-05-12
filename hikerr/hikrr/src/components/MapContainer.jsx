@@ -1,49 +1,62 @@
 import React from 'react'
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-//import axios from 'axios';
-import { useState } from 'react'
+import {
+    GoogleMap, LoadScript, InfoBox, Marker, DirectionsRenderer, DirectionsService } from "@react-google-maps/api";
+import { useState, useRef } from 'react'
 
 const MapContainer = () => {
+  
+      const [newDirections, setNewDirections] = useState(null);
+      const [distance, setDistance] = useState("");
+      const [duration, setDuration] = useState("");
 
-    const [currentPosition, setCurrentPosition] = useState({});
-   
-    // const [origin, setOrigin] = useState('')
-    // const [destination, setDestination] = useState('')
-    // const [directions, setDirections] = useState('')
 
- 
+
+  const API_KEY = process.env.REACT_APP_GOOGLE_KEY;
+
+  // I have used this documentation for this component https://react-google-maps-api-docs.netlify.app/
+
+  const mapStyles = {
+    height: "80vh",
+    width: "50%",
+  };
+
+  const defaultCenter = {
+    lat: 40.73,
+    lng: -73.93,
+  };
     
-const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
-const mapStyles = {
-       height: "80vh",
-       width: "50%",
-     };
-
-     const defaultCenter = {
-       lat: 40.73,
-       lng: -73.93,
-     };
- 
-
-//     const getDirections = async () => {
-//       let res = await axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${API_KEY}`)
-//         console.log(res.data)
-//         setDirections(res.data)
-        
-//     }   
+    const getOrigin = useRef();
+const getDestination = useRef();
     
-//     useEffect(() => {
-//      getDirections() 
-//   }, [])  
+const calculateRoute = async () => {
+    
+    if (getOrigin.current.value === "" || getDestination.current.value === "") {
+      return;
+    }
+    const directionsService = new window.google.maps.DirectionsService();
+    const results = await directionsService.route({
+      origin: getOrigin.current.value,
+      destination: getDestination.current.value,
+      travelMode: window.google.maps.TravelMode.DRIVING,
+    });
+    setNewDirections(results);
+    setDistance(results.routes[0].legs[0].distance.text);
+    setDuration(results.routes[0].legs[0].duration.text);
+  }   
 
-return (
+  return (
     <div>
       <LoadScript googleMapsApiKey={API_KEY}>
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
-                  center={defaultCenter}
-        />
+          center={defaultCenter}
+        >
+          <Marker position={defaultCenter} />
+          {newDirections && (
+            <DirectionsRenderer directions={newDirections} />
+          )}
+        </GoogleMap>
       </LoadScript>
     </div>
   );

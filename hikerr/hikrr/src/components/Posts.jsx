@@ -27,25 +27,27 @@ useEffect(() => {
 }, []);  
   
   return (
-    <div className="post-container centered">
+    <div className="post-container">
       <div className="centered">
         <h1>Hikerr</h1>
-   </div>
-      {posts.map((post) => (
-        <div
-          className="post-square"
-          onClick={() => showPost(post)}
-          key={post.id}>
-             <PostItem
-               title={post.title}
-               image={post.imgUrl}
-               content={post.content}
-               rating={post.rating}
-               mapImg={post.mapImg}
-               userId={post.user_id}
-              />
-        </div>
-      ))}
+      </div>
+      <div className="post-square">
+        {posts.map((post) => (
+          <div
+            onClick={() => showPost(post)}
+            key={post.id}
+          >
+            <PostItem
+              title={post.title}
+              image={post.imgUrl}
+              content={post.content}
+              rating={post.rating}
+              mapImg={post.mapImg}
+              userId={post.user_id}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
