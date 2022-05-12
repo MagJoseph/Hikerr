@@ -46,7 +46,9 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar handleLogOut={handleLogOut} />
+      <Navbar authenticated={authenticated}
+        handleLogOut={handleLogOut}
+        user={user}/>
       <main>
         <Routes>
           <Route
@@ -73,7 +75,7 @@ function App() {
           />
           <Route path="/createpost" element={<CreatePost user={user} />} />
           <Route path="/yourrecordings" element={<YourRecordings />} />
-          <Route path="/map" element={ <MapContainer />} />
+          <Route path="/map" element={<MapContainer />} />
         </Routes>
       </main>
     </div>
