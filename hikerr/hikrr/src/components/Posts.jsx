@@ -27,13 +27,13 @@ useEffect(() => {
 }, []);  
   
   return (
-    <div>
-      <div className="center">
+    <div className="post-container centered">
+      <div className="centered">
         <h1>Hikerr</h1>
    </div>
       {posts.map((post) => (
         <div
-          className="home-container"
+          className="post-square"
           onClick={() => showPost(post)}
           key={post.id}>
              <PostItem

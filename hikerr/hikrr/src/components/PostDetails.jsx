@@ -33,7 +33,7 @@ const [comments, setComment] = useState('');
  return ( selectedPost && comments ) ?  (
    <div className="post-details">
      <p className="post-title"> {selectedPost.title}</p>
-     <img src={selectedPost.imgUrl} />
+     <img className="photo" src={selectedPost.imgUrl} />
      <br></br>
      <p className="post-content"> {selectedPost.content}</p>
      <p className="post-content">Difficulty Rating: {selectedPost.rating}</p>

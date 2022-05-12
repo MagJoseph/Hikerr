@@ -37,6 +37,24 @@
   height: 900px;
 }
 
+.navbar {
+  background-color: rgb(215, 234, 75);
+  font-size: 20px;
+  padding: 10px;
+  text-align: left;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  margin: 15px;
+}
+
+.nav-item:hover {
+  background-color: rgb(230, 240, 156);
+}
+
 .landing {
   padding: 15px;
   font-size: 20px;
@@ -114,4 +132,12 @@ color: black;
 .sub-btn:hover {
   box-shadow: rgba(73, 87, 32, 0.8) 15px 15px;
 
+}
+
+.post-container {
+    background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80');
+}
+
+.photo {
+  width: 500px;
 }
