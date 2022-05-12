@@ -1,16 +1,22 @@
 import React from 'react'
 import {
-    GoogleMap, LoadScript, InfoBox, Marker, DirectionsRenderer, DirectionsService } from "@react-google-maps/api";
+ GoogleMap,
+  LoadScript,
+ Marker,
+  DirectionsRenderer,
+  DirectionsService, DistanceMatrixService
+} from "@react-google-maps/api";
 import { useState, useRef } from 'react'
 
 const MapContainer = () => {
+  // I have used this documentation for this component https://react-google-maps-api-docs.netlify.app/
+    
   const [newDirections, setNewDirections] = useState(null);
-  const [distance, setDistance] = useState("");
-  const [duration, setDuration] = useState("");
+  const [distance, setDistance] = useState('');
+    const [duration, setDuration] = useState('');
+  
 
   const API_KEY = process.env.REACT_APP_GOOGLE_KEY;
-
-  // I have used this documentation for this component https://react-google-maps-api-docs.netlify.app/
 
   const mapStyles = {
     height: "80vh",
@@ -35,14 +41,15 @@ const MapContainer = () => {
     const results = await directionsService.route({
       origin: getOrigin.current.value,
       destination: getDestination.current.value,
-      travelMode: window.google.maps.TravelMode.DRIVING,
+      travelMode: window.google.maps.TravelMode.DRIVING
     });
-    setNewDirections(results);
-    setDistance(results.routes[0].legs[0].distance.text);
+     setNewDirections(results);
+     setDistance(results.routes[0].legs[0].distance.text);
     setDuration(results.routes[0].legs[0].duration.text);
+   
   };
 
-  const clearRoute = () => {
+  const resetRoute = () => {
     setNewDirections(null);
     setDistance("");
     setDuration("");
@@ -60,7 +67,25 @@ const MapContainer = () => {
         >
           <Marker position={defaultCenter} />
           {newDirections && <DirectionsRenderer directions={newDirections} />}
-        </GoogleMap>
+     </GoogleMap>
+        <input
+          className="input"
+          type="text"
+          placeholder="Starting location"
+          ref={getOrigin}
+        />
+        <input
+          className="input"
+          type="text"
+          placeholder="Your destination"
+          ref={getDestination}
+        />
+        <button type="submit" className="btn" onClick={calculateRoute}>
+          Submit
+        </button>
+        <button className="btn" onClick={resetRoute}>
+          Reset
+        </button>
       </LoadScript>
     </div>
   );
