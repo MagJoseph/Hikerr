@@ -26,15 +26,15 @@ const Login = (props) => {
     navigate("/posts");
   };
   return (
-    <div>
-      <div className="login">
-        <h1 className="reg-title">Hikrr</h1>
-        <form className="log" onSubmit={handleSubmit}>
-          <div className="welcome"> Please Log in</div>
-          <div className="input-wrapper">
+    <div className="register">
+      <div className="centered">
+        <h1>Hikrr</h1>
+        <h2 className="welcome"> Please Log in</h2>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="centered">
             <label htmlFor="email">Username</label>
             <input
-              className="input2"
+              className="input1"
               onChange={handleChange}
               name="username"
               type="text"
@@ -44,16 +44,17 @@ const Login = (props) => {
             />
             <label htmlFor="password">Password</label>
             <input
-              className="input2"
+              className="input1"
               onChange={handleChange}
               type="password"
               name="password"
+              placeholder="Your password"
               value={formValues.password}
               required
             />
           </div>
           <button
-            className="s-btn1"
+            className="sub-btn"
             disabled={!formValues.username || !formValues.password}
           >
             Log In

@@ -11,7 +11,7 @@ const Search = () => {
 
   const getSearchResults = async (e) => {
     e.preventDefault();
-    let res = await Client.get(`http://localhost:3001/search/${searchQuery}`);
+    let res = await Client.get(`search/${searchQuery}`);
     console.log(res.data)
     setSearchResults(res.data)
   }

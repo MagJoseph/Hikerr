@@ -21,7 +21,7 @@ let navigate = useNavigate();
     
      const getNewPost = async () => {
        await Client({
-         url: `http://localhost:3001/posts/${userId}`,
+         url: `posts/${userId}`,
          method: "post",
          data: newPost,
        });
@@ -36,7 +36,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
   getNewPost();
   //returns back to posts after submitting
-  navigate("/myhikes");
+  navigate('/myhikes');
   window.location.reload(false);
 };    
     

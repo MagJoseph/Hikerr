@@ -12,7 +12,7 @@ const YourRecordings = () => {
   const [times, setTime] = useState([])
   
   const getTimes = async () => {
-    const recordings = await Client.get(`http://localhost:3001/times`);
+    const recordings = await Client.get(`times`);
     console.log(recordings.data)
     setTime(recordings.data)
   }
@@ -29,7 +29,7 @@ const YourRecordings = () => {
   
   const getNewTiming = async () => {
     await Client({
-      url: `http://localhost:3001/times`,
+      url: `times`,
       method: 'post',
       data: newRecording
     });

@@ -12,7 +12,7 @@ const Home = () => {
         <div className="title">Where your adventure begins</div>
       </div>
       <div className="link-wrapper centered">
-        {/* <Link to="/posts" className="item">Hiking Trails</Link> */}
+       
         <br></br>
         <div className="land-container">
           <div className="landing">

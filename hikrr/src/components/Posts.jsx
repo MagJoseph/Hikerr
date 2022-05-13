@@ -18,7 +18,7 @@ const showPost = (posts) => {
  } 
   
 const getPosts = async () => {
-  const list = await Client.get(`http://localhost:3001/posts`);
+  const list = await Client.get(`posts`);
   console.log(list.data);
   setPosts(list.data);
 }; 
@@ -30,7 +30,7 @@ useEffect(() => {
   return (
     <div className="post-container">
       <Slide left>
-        <h1>Hikerr</h1>
+        <h1>Hikrr</h1>
       </Slide>
       <div>
         <div className="post-square">

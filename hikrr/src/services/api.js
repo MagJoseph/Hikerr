@@ -1,7 +1,8 @@
 import Axios from "axios";
 
 
-export const BASE_URL = "http://localhost:3001";;
+let apiUrl = process.env.NODE_ENV === "production" ? "https://hikrr-app.herokuapp.com/" : "http://localhost:3001/";
+export const BASE_URL = apiUrl;
 
 const Client = Axios.create({ baseURL: BASE_URL });
 

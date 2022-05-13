@@ -4,7 +4,7 @@ import {
   LoadScript,
  Marker,
   DirectionsRenderer,
-  DirectionsService, DistanceMatrixService
+  DirectionsService
 } from "@react-google-maps/api";
 import { useState, useRef } from 'react'
 
@@ -67,6 +67,7 @@ const MapContainer = () => {
         >
           <Marker position={defaultCenter} />
           {newDirections && <DirectionsRenderer directions={newDirections} />}
+       
         </GoogleMap>
         <div className="submit-form">
           <input

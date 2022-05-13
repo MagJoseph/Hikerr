@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WeatherItem = ({ currentWeather, location }) => {
+const WeatherItem = ({ currentWeather }) => {
   return (
     <div className="centered">
       

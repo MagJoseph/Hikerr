@@ -24,13 +24,13 @@ const MyHikes = (props) => {
 
   useEffect(() => {
     const makeApiCall = async () => {
-      let res = await Client.get(`http://localhost:3001/posts/${getUser}`);
+      let res = await Client.get(`posts/${getUser}`);
       console.log(res.data)
       setPosts(res.data);
     };
     makeApiCall();
     const userCall = async () => {
-      let res = await Client.get(`http://localhost:3001/users/${getUser}`);
+      let res = await Client.get(`users/${getUser}`);
       setUserInfo(res.data);
     };
     userCall();
