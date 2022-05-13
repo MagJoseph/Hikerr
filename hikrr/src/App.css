@@ -307,3 +307,28 @@ h2 {
     rgba(0, 0, 0, 0.17) 0px 12px 13px,
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+.mar {
+  margin-bottom: 30px;
+}
+
+/* *******comments */
+
+.add-comment {
+    font-family: 'Koulen',
+    cursive;
+    font-size: 20px;
+    padding: 10px 25px;
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
+    border-radius: 20px;
+    background-color: rgb(215, 234, 75);
+    text-decoration: none;
+    color: black;
+    margin-bottom: 25px;
+     width: 400px;
+}
+
+.add-comment:hover {
+    color:rgb(89, 119, 61);
+    box-shadow: rgba(73, 87, 32, 0.8) 15px 15px;
+}

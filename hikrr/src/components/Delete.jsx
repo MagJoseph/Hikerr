@@ -17,8 +17,9 @@ const Delete = (props) => {
 
   return (
     <div className="centered">
-      <button className="s-btn" onClick={handleDelete}>
-        Delete Post
+      <div className="post-title">Delete your post</div>
+      <button className="sub-btn mar" onClick={handleDelete}>
+        Delete
       </button>
     </div>
   );

@@ -61,7 +61,7 @@ const CreateComment = () => {
           <button className="s-btn">Submit</button>
         </form>
       </div>
-      ;
+      
     </div>
   );
 };
