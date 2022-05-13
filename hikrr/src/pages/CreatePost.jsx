@@ -41,10 +41,10 @@ const handleSubmit = (e) => {
 };    
     
   return (
-    <div>
-      <h2 className="new-post">Add A New Post</h2>
-      <div className="form-form">
-        <form className="submit-form" onSubmit={handleSubmit}>
+    <div className="form-form">
+      <h2 className="post-title">Add A New Post</h2>
+      <div className="centered">
+        <form className="submit-form centered" onSubmit={handleSubmit}>
           <input
             className="input"
             type="text"
@@ -85,11 +85,11 @@ const handleSubmit = (e) => {
             name={"mapImg"}
             placeholder={"Map Image Url"}
           />
-          <button className="s-btn">Submit</button>
+          <button className="sub-btn">Submit</button>
         </form>
       </div>
     </div>
-) 
+  ); 
 
 }
 

@@ -34,9 +34,9 @@ const handleSubmit = (e) => {
 };    
     
     return (
-      <div className="comment-container">
-        <h2 className="comment-form">Update Your Post</h2>
-        <form className="submit-container" onSubmit={handleSubmit}>
+      <div className="centered">
+        <h2 className="post-title">Update Your Post</h2>
+        <form className="submit-form centered" onSubmit={handleSubmit}>
           <input
             className="input"
             type="text"
@@ -82,7 +82,7 @@ const handleSubmit = (e) => {
             }}
             placeholder="Map Image Url"
           />
-          <button className="s-btn">Submit</button>
+          <button className="sub-btn">Submit</button>
         </form>
       </div>
     );

@@ -34,13 +34,14 @@ const [comments, setComment] = useState('');
   return selectedPost && comments ? (
     <div className="centered bkground">
       <p className="post-title"> {selectedPost.title}</p>
-       <Slide left>
-          <img className="land" src={selectedPost.imgUrl} />
-        </Slide>
-        <br></br>
-        <div className="centered">
+      <Slide left>
+        <img className="land" src={selectedPost.imgUrl} />
+      </Slide>
+      <br></br>
+      <div className="centered">
+        <Slide right>
           <p className="post-content"> {selectedPost.content}</p>
-       
+        </Slide>
         <div>
           <p className="rating">Difficulty Rating: {selectedPost.rating}</p>
         </div>

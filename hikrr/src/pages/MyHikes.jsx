@@ -37,19 +37,15 @@ const MyHikes = (props) => {
   }, []);
 
   return posts && userInfo ? (
-    <div>
+    <div className="centered bkground">
       <div>
-        <h1> Hello {user.username}!</h1>
+        <h1 className="post-title"> Hello {user.username}!</h1>
         <h2>Your Hikes:</h2>
       </div>
       <div>
         {posts.map((post) => (
-          <div
-            className="home-container"
-            onClick={() => showPost(post)}
-            key={post.id}
-          >
-            <div>
+          <div onClick={() => showPost(post)} key={post.id}>
+            <div className="hikes-square">
               <PostItem
                 title={post.title}
                 image={post.imgUrl}
