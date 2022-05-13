@@ -37,31 +37,33 @@ const MyHikes = (props) => {
   }, []);
 
   return posts && userInfo ? (
-    <div className="centered bkground">
+    <div className="centered bkground2">
       <div>
         <h1 className="post-title"> Hello {user.username}!</h1>
-        <h2>Your Hikes:</h2>
-      </div>
-      <div>
-        {posts.map((post) => (
-          <div onClick={() => showPost(post)} key={post.id}>
-            <div className="hikes-square">
-              <PostItem
-                title={post.title}
-                image={post.imgUrl}
-                content={post.content}
-                mapImg={post.mapImg}
-                rating={post.rating}
-              />
+        <div>
+          <h2>Your Hikes:</h2>
+        </div>
+        <div>
+          {posts.map((post) => (
+            <div onClick={() => showPost(post)} key={post.id}>
+              <div className="hikes-square">
+                <PostItem
+                  title={post.title}
+                  image={post.imgUrl}
+                  content={post.content}
+                  mapImg={post.mapImg}
+                  rating={post.rating}
+                />
+              </div>
+              <div>
+                <UpdatePost postId={post.id} />
+              </div>
+              <div>
+                <Delete postId={post.id} />
+              </div>
             </div>
-            <div>
-              <UpdatePost postId={post.id} />
-            </div>
-            <div>
-              <Delete postId={post.id} />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   ) : (

@@ -22,28 +22,35 @@ const Search = () => {
   
   return (
     <div>
-      <h1>Search Hiking Trails</h1>
-      <form onSubmit={getSearchResults}>
-        <input
-          type="text"
-          name="search"
-          value={searchQuery}
-          placeholder="Search Hikes"
-          onChange={handleChange}
-        ></input>
-        <button type="submit">Search</button>
-      </form>
       <div>
-        {searchResults.map((result) => (
-          <SearchItem
-            key={result.id}
-            title={result.title}
-            image={result.imgUrl}
-            content={result.content}
-            rating={result.rating}
-            mapImg={result.mapImg}
-          />
-        ))}
+        <h2 className="post-title">Search Hiking Trails</h2>
+        <div className="centered bkground">
+          <form className="submit-form" onSubmit={getSearchResults}>
+            <input
+              className="input"
+              type="text"
+              name="search"
+              value={searchQuery}
+              placeholder="Search Hikes"
+              onChange={handleChange}
+            ></input>
+            <button className="sub-btn" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <div>
+          {searchResults.map((result) => (
+            <SearchItem
+              key={result.id}
+              title={result.title}
+              image={result.imgUrl}
+              content={result.content}
+              rating={result.rating}
+              mapImg={result.mapImg}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

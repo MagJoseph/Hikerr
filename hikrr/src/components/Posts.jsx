@@ -3,6 +3,7 @@ import PostItem from './PostItem'
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"; 
 import Client from "../services/api";
+import Slide from "react-reveal/Slide";
 
 const Posts = () => {
 
@@ -28,30 +29,30 @@ useEffect(() => {
   
   return (
     <div className="post-container">
-      <h1>Hikerr</h1>
+      <Slide left>
+        <h1>Hikerr</h1>
+      </Slide>
       <div>
-        
-          <div className="post-square">
-            {posts.map((post) => (
-              <div
-                className="square"
-                onClick={() => showPost(post)}
-                key={post.id}
-              >
-                <PostItem
-                  title={post.title}
-                  className="img"
-                  image={post.imgUrl}
-                  content={post.content}
-                  rating={post.rating}
-                  mapImg={post.mapImg}
-                  userId={post.user_id}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="post-square">
+          {posts.map((post) => (
+            <div
+              className="square"
+              onClick={() => showPost(post)}
+              key={post.id}
+            >
+              <PostItem
+                title={post.title}
+                className="img"
+                image={post.imgUrl}
+                content={post.content}
+                rating={post.rating}
+                mapImg={post.mapImg}
+                userId={post.user_id}
+              />
+            </div>
+          ))}
         </div>
-      
+      </div>
     </div>
   );
 }
