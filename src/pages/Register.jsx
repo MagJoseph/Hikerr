@@ -131,7 +131,7 @@ const alertUser = () => {
                 onChange={handleChange}
                 name="username"
                 type="text"
-                placeholder="Your Name"
+                placeholder="Username"
                 value={formValues.username}
                 required
               />
