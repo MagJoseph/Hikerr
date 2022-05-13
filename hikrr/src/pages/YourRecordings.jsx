@@ -51,10 +51,12 @@ const YourRecordings = () => {
 
   return (
     <div>
-      <Stopwatch />
-      <div className="rec-container">
-        <h2 className="rec-form">Add a New Recording</h2>
-        <form className="submit-container" onSubmit={submitForm}>
+      <div className="post-title">
+        <Stopwatch />
+      </div>
+      <div className="rec-container centered bkground2">
+        <h2 className="post-title">Add a New Recording</h2>
+        <form className="submit-form centered" onSubmit={submitForm}>
           <input
             className="input"
             type="text"
@@ -79,13 +81,13 @@ const YourRecordings = () => {
             name={"distance"}
             placeholder={"Distance"}
           />
-          <button className="s-btn">Submit</button>
+          <button className="sub-btn">Submit</button>
         </form>
       </div>
-      <div>
-        <h1>Your Recordings:</h1>
+      <div className="centered">
+        <h2 className="post-title">Your Recordings:</h2>
         {times.map((time) => (
-          <div className="times-container" key={time.id}>
+          <div className="comments" key={time.id}>
             <RecordingItem
               name={time.name}
               content={time.content}

@@ -58,7 +58,7 @@ const MapContainer = () => {
   };
 
   return (
-    <div>
+    <div className="centered bkground2">
       <LoadScript googleMapsApiKey={API_KEY}>
         <GoogleMap
           mapContainerStyle={mapStyles}
@@ -67,25 +67,27 @@ const MapContainer = () => {
         >
           <Marker position={defaultCenter} />
           {newDirections && <DirectionsRenderer directions={newDirections} />}
-     </GoogleMap>
-        <input
-          className="input"
-          type="text"
-          placeholder="Starting location"
-          ref={getOrigin}
-        />
-        <input
-          className="input"
-          type="text"
-          placeholder="Your destination"
-          ref={getDestination}
-        />
-        <button type="submit" className="btn" onClick={calculateRoute}>
-          Submit
-        </button>
-        <button className="btn" onClick={resetRoute}>
-          Reset
-        </button>
+        </GoogleMap>
+        <div className="submit-form">
+          <input
+            className="input"
+            type="text"
+            placeholder="Starting location"
+            ref={getOrigin}
+          />
+          <input
+            className="input"
+            type="text"
+            placeholder="Your destination"
+            ref={getDestination}
+          />
+          <button type="submit" className="sub-btn" onClick={calculateRoute}>
+            Submit
+          </button>
+          <button className="sub-btn" onClick={resetRoute}>
+            Reset
+          </button>
+        </div>
       </LoadScript>
     </div>
   );

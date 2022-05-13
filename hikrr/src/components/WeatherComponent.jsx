@@ -38,10 +38,11 @@ const [currentWeather, setCurrentWeather] = useState([])
   
  return currentWeather ? (
    <div>
-     <div>
-       <h2>Check the weather before you go!</h2>
-       <div>
-         <form onSubmit={handleSubmit}>
+     <div className="form-form">
+       <h2 className="post-title">Check the weather before you go!</h2>
+       <h2>Type in your city:</h2>
+       <div className="centered">
+         <form className="submit-form" onSubmit={handleSubmit}>
            <input
              className="input"
              type="text"
@@ -49,13 +50,13 @@ const [currentWeather, setCurrentWeather] = useState([])
              value={location}
              onChange={handleChange}
            />
-           <button className="btn">Submit</button>
+           <button className="sub-btn">Submit</button>
          </form>
        </div>
        <div>
-         <WeatherItem currentWeather={currentWeather} />
+         <WeatherItem currentWeather={currentWeather} location={location}/>
        </div>
-       <div className="weather-wrapper">
+       <div className="centered">
          {moreWeather.map((weather) => (
            <div className="weather" key={weather.id}>
              <Weatherweather

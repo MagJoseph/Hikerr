@@ -5,10 +5,9 @@ import React from 'react'
 const Weatherweather = (props) => {
 
   return (
-      <div>
+      <div className="centered">
           <div>Conditions: {props.main}</div>
-        
-      </div>
+     </div>
   )
 }
 

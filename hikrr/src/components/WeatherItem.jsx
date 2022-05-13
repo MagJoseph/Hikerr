@@ -1,12 +1,12 @@
 import React from 'react'
 
-const WeatherItem = ({ currentWeather }) => {
+const WeatherItem = ({ currentWeather, location }) => {
   return (
-      <div>
-          <div>Today's Temperature: {Math.ceil(currentWeather.temp)} </div>
-        
+    <div className="centered">
+      
+      <div className="weather">Today's Temperature: {currentWeather.temp}F </div>
     </div>
-  )
+  ) 
 }
 
 export default WeatherItem

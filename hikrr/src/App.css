@@ -300,6 +300,20 @@ h2 {
   
 }
 
+h3 {
+  font-size: 20px;
+  font-family: 'Roboto Flex',
+    sans-serif;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.hike-names {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
 .hikes-square {
   background-color: white;
   border: 10px solid rgb(183, 190, 123);
@@ -339,4 +353,37 @@ h2 {
   background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80');
   background-size: cover;
   text-align: center;
+}
+
+.stopwatch-btn {
+  margin: 20px;
+  padding: 15px 25px;
+  background-color: rgb(183, 190, 123);
+  border: none;
+  font-size: 20px;
+  font-family: 'Roboto Flex',
+  sans-serif;
+  border-radius: 20px;
+  
+}
+
+.stopwatch-btn:hover {
+  background-color: rgb(220, 225, 177);
+  box-shadow: rgba(73, 87, 32, 0.8) 10px 10px;
+}
+
+
+/* ******weather */
+.weather {
+  font-family: 'Koulen',
+    cursive;
+  font-size: 20px;
+  padding: 10px 25px;
+  box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
+  border-radius: 20px;
+  background-color: rgb(215, 234, 75);
+  text-decoration: none;
+  color: black;
+  margin: 25px;
+  width: 400px;
 }

@@ -6,9 +6,9 @@ const RecordingItem = (props) => {
   return (
     <div>
       <div className="times-wrapper">
-        <h2>Hike: {props.name}</h2>
-        <h2>Your Time: {props.content}</h2>
-        <h2>Distance: {props.distance}</h2>
+        <h3 className="hike-names">Hike: {props.name}</h3>
+        <h3>Your Time: {props.content}</h3>
+        <h3>Distance: {props.distance}</h3>
       </div>
     </div>
   )

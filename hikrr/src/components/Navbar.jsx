@@ -15,7 +15,7 @@ const Navbar = ({ handleLogOut, authenticated }) => {
        <Link className="nav-item" to="/yourrecordings">Your Recordings</Link>
        <Link className="nav-item" to="/map">Maps</Link>
        <Link className="nav-item" to="/weather">Weather</Link>
-       <Link className="nav-item" onClick={handleLogOut} to="/"></Link>
+       <Link className="nav-item" onClick={handleLogOut} to="/">Log Out</Link>
      </nav>
   </div>
  ) : (

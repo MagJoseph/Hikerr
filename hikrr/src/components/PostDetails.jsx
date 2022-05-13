@@ -32,7 +32,7 @@ const [comments, setComment] = useState('');
 
     
   return selectedPost && comments ? (
-    <div className="centered bkground">
+    <div className="centered bkground2">
       <p className="post-title"> {selectedPost.title}</p>
       <Slide left>
         <img className="land" src={selectedPost.imgUrl} />
