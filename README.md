@@ -30,5 +30,5 @@
 <img width="1324" alt="Screen Shot 2022-04-01 at 9 51 19 AM" src="https://media.cntraveler.com/photos/5f30958cd437cc83655ff9c2/16:9/w_2560%2Cc_limit/HikingDayontheTrails-GettyImages-1049524114.jpg">
 
 ### ***Credits***
-##### Images where found on Google Search.
-***# Hikerr
+##### Image credit: Alessio Soggetti.
+#### Articles and maps:Alltrails.com

@@ -87,8 +87,8 @@ const alertUser = () => {
       setFormValues({ ...formValues, [e.target.name]: e.target.value });
     };
     console.log(formValues);
-    console.log(emailList);
-    console.log(usernameList);
+    // console.log(emailList);
+    // console.log(usernameList);
 
 
   return (
