@@ -44,7 +44,7 @@ const YourRecordings = () => {
       const submitForm = (e) => {
         e.preventDefault();
         getNewTiming();
-        navigate(`http://localhost:3001/yourrecordings`);
+        navigate("/yourrecordings");
         window.location.reload(false);
       };
 

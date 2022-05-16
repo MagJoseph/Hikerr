@@ -21,14 +21,14 @@
 ##### Comopnent Hierarchy Diagram can be viewd here: [Diagram](https://lucid.app/lucidchart/fc358db7-8ee0-436e-bbf1-737cfcb73f73/edit?invitationId=inv_76c7290b-1c21-4195-b44b-ef389cffdf39).
 ***
 ### ***Future Updates***
+##### [ ] - Display directions in Maps
 ##### [ ] - 
-##### [ ] -
 ***
 ### ***Getting Started***
 ##### Fork and clone this repository to your terminal window
 ****
-<img width="1324" alt="Screen Shot 2022-04-01 at 9 51 19 AM" src="https://media.cntraveler.com/photos/5f30958cd437cc83655ff9c2/16:9/w_2560%2Cc_limit/HikingDayontheTrails-GettyImages-1049524114.jpg">
+<img width="1324" alt="Screen Shot 2022-04-01 at 9 51 19 AM" src="https://i.imgur.com/siogVKc.png">
 
 ### ***Credits***
 ##### Image credit: Alessio Soggetti.
-#### Articles and maps:Alltrails.com
+##### Articles and maps:Alltrails.com

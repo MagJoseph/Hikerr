@@ -43,7 +43,7 @@ const [comments, setComment] = useState('');
           <p className="post-content"> {selectedPost.content}</p>
         </Slide>
         <div>
-          <p className="rating">Difficulty Rating: {selectedPost.rating}</p>
+          <p className="rating">Difficulty Rating (1-5): {selectedPost.rating}</p>
         </div>
         <img className="img-map" src={selectedPost.mapImg} />
         <br></br>

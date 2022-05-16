@@ -36,7 +36,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
   getNewPost();
   //returns back to posts after submitting
-  navigate('/myhikes');
+  navigate("/myhikes");
   window.location.reload(false);
 };    
     

@@ -69,7 +69,7 @@ const alertUser = () => {
           password: "",
           confirmPassword: "",
         });
-        navigate("/login");
+        navigate(`/login`);
       }
       setFormValues({
         firstName: formValues.firstName,
