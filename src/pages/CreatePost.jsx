@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import React from 'react'
 import Client from "../services/api";
 
+import Box from "@mui/material/Box";
+
+
 const CreatePost = (props) => {
 
    const userId = props.user.id
@@ -41,12 +44,14 @@ const handleSubmit = (e) => {
 };    
     
   return (
-    <div className="form-form">
-      <h2 className="post-title">Add A New Post</h2>
+    <Box className="home">
+      <div>
+        <h1>Add A New Post</h1>
+        </div>
       <div className="centered">
-        <form className="submit-form centered" onSubmit={handleSubmit}>
+        <form className="form centered" onSubmit={handleSubmit}>
           <input
-            className="input"
+            className="input1"
             type="text"
             value={newPost.title}
             onChange={handleChange}
@@ -54,7 +59,7 @@ const handleSubmit = (e) => {
             placeholder={"Title"}
           />
           <input
-            className="input"
+            className="input1"
             type="text"
             value={newPost.imgUrl}
             onChange={handleChange}
@@ -62,7 +67,7 @@ const handleSubmit = (e) => {
             placeholder={"Image Url"}
           />
           <input
-            className="input"
+            className="input1"
             type="text"
             value={newPost.content}
             onChange={handleChange}
@@ -70,7 +75,7 @@ const handleSubmit = (e) => {
             placeholder={"Content"}
           />
           <input
-            className="input"
+            className="input1"
             type="text"
             value={newPost.rating}
             onChange={handleChange}
@@ -78,7 +83,7 @@ const handleSubmit = (e) => {
             placeholder={"Difficulty rating"}
           />
           <input
-            className="in-cont input"
+            className="in-cont input1"
             type="text"
             value={newPost.mapImg}
             onChange={handleChange}
@@ -88,7 +93,7 @@ const handleSubmit = (e) => {
           <button className="sub-btn">Submit</button>
         </form>
       </div>
-    </div>
+    </Box>
   ); 
 
 }

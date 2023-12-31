@@ -16,6 +16,7 @@ import Register from './pages/Register';
 import YourRecordings from './pages/YourRecordings';
 import MapContainer from './components/MapContainer'
 import WeatherComponent from './components/WeatherComponent';
+import UpdatePost from './components/UpdatePost';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -75,6 +76,7 @@ function App() {
             element={<CreateComment />}
           />
           <Route path="/createpost" element={<CreatePost user={user} />} />
+          <Route path="/updatepost/:id" element={<UpdatePost/>} />
           <Route path="/yourrecordings" element={<YourRecordings />} />
           <Route path="/map" element={<MapContainer />} />
           <Route path="weather" element={<WeatherComponent /> } />

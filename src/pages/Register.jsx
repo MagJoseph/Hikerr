@@ -4,6 +4,8 @@ import { RegisterUser } from "../services/Auth";
 import { useNavigate } from "react-router-dom";
 import Client from "../services/api";
 
+import Box from "@mui/material/Box";
+
 const Register = () => {
 
   let navigate = useNavigate()
@@ -92,14 +94,12 @@ const alertUser = () => {
 
 
   return (
-    <div>
-      <div className="register">
-        <div className="centered">
-          <h1 className="reg-title">Hikrr</h1>
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="input-wrapper1">
-              <label htmlFor="name">First Name</label>
-              <br></br>
+       <Box className="home">
+      <div>
+        <h1>Hikrr</h1>
+      </div>
+      <div className="centered">
+          <form className="form centered" onSubmit={handleSubmit}>
               <input
                 className="input1"
                 onChange={handleChange}
@@ -109,10 +109,6 @@ const alertUser = () => {
                 value={formValues.firstName}
                 required
               />
-            </div>
-            <div className="input-wrapper1">
-              <label htmlFor="name">Last Name</label>
-              <br></br>
               <input
                 className="input1"
                 onChange={handleChange}
@@ -122,10 +118,6 @@ const alertUser = () => {
                 value={formValues.lastName}
                 required
               />
-            </div>
-            <div className="input-wrapper1">
-              <label htmlFor="username">Username</label>
-              <br></br>
               <input
                 className={usedInfo ? "input1" : "input1 user-alert"}
                 onChange={handleChange}
@@ -135,10 +127,6 @@ const alertUser = () => {
                 value={formValues.username}
                 required
               />
-            </div>
-            <div className="input-wrapper1">
-              <label htmlFor="email">Email</label>
-              <br></br>
               <input
                 className={usedInfo ? "input1" : "input1 red-alert"}
                 onChange={handleChange}
@@ -148,10 +136,6 @@ const alertUser = () => {
                 value={formValues.email}
                 required
               />
-            </div>
-            <div className="input-wrapper1">
-              <label htmlFor="password">Password</label>
-              <br></br>
               <input
                 className="input1"
                 onChange={handleChange}
@@ -161,10 +145,6 @@ const alertUser = () => {
                 value={formValues.password}
                 required
               />
-            </div>
-            <div className="input-wrapper1">
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <br></br>
               <input
                 className="input1"
                 onChange={handleChange}
@@ -173,9 +153,9 @@ const alertUser = () => {
                 placeholder="Confirm password"
                 value={formValues.confirmPassword}
                 required
-              />
-            </div>
-            <button
+          />
+          <br/>
+             <button
               className="sub-btn"
               disabled={
                 !formValues.email ||
@@ -186,9 +166,9 @@ const alertUser = () => {
               Register
             </button>
           </form>
-        </div>
-      </div>
-    </div>
+       </div>
+     
+  </Box>
   );
 }
 

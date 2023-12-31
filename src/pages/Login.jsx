@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SignInUser } from "../services/Auth";
 
+import Box from "@mui/material/Box";
+
 
 const Login = (props) => {
   let navigate = useNavigate();
@@ -26,13 +28,13 @@ const Login = (props) => {
     navigate("/posts");
   };
   return (
-    <div className="register">
+   <Box className="home">
       <div className="centered">
         <h1>Hikrr</h1>
-        <h2 className="welcome"> Please Log in</h2>
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="centered">
-            <label htmlFor="email">Username</label>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <br />
+          <div className="welcome">Welcome!</div>
+          <br/>
             <input
               className="input1"
               onChange={handleChange}
@@ -42,7 +44,6 @@ const Login = (props) => {
               value={formValues.username}
               required
             />
-            <label htmlFor="password">Password</label>
             <input
               className="input1"
               onChange={handleChange}
@@ -52,7 +53,6 @@ const Login = (props) => {
               value={formValues.password}
               required
             />
-          </div>
           <button
             className="sub-btn"
             disabled={!formValues.username || !formValues.password}
@@ -61,7 +61,7 @@ const Login = (props) => {
           </button>
         </form>
       </div>
-    </div>
+   </Box>
   );
 };
 

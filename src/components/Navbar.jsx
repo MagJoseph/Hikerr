@@ -1,51 +1,194 @@
 import React from 'react'
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import Slide from "react-reveal/Slide";
+
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import Box from "@mui/material/Box";
+
+import Drawer from "@mui/material/Drawer";
+import CloseIcon from "@mui/icons-material/Close";
+import Divider from "@mui/material/Divider";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import { Typography } from "@mui/material";
+
+import MapIcon from "@mui/icons-material/Map";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CloudIcon from "@mui/icons-material/Cloud";
+import ForestIcon from "@mui/icons-material/Forest";
+import PostAddIcon from "@mui/icons-material/PostAdd";
+import LogoutIcon from "@mui/icons-material/Logout";
+import LoginIcon from "@mui/icons-material/Login";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
+
 const Navbar = ({ handleLogOut, authenticated }) => {
-
   
+  const [open, setState] = useState(false);
 
- return authenticated ? (
-   <div className="navnav">
-     <nav className="navbar">
-       <Link className="nav-item" to="/posts">
-         Hikes
-       </Link>
-       <Link className="nav-item" to="/myhikes">
-         My Hikes
-       </Link>
-       <Link className="nav-item" to="/search">
-         Search
-       </Link>
-       <Link className="nav-item" to="/createpost">
-         Add New Post
-       </Link>
-       <Link className="nav-item" to="/yourrecordings">
-         Your Recordings
-       </Link>
-       <Link className="nav-item" to="/map">
-         Maps
-       </Link>
-       <Link className="nav-item" to="/weather">
-         Weather
-       </Link>
-       <Link className="nav-item" onClick={handleLogOut} to="/">
-         Log Out
-       </Link>
-     </nav>
-   </div>
- ) : (
-   <div className="navnav">
-     <nav>
-       {/* <Link className="nav-item" to="/login">
-         Login
-       </Link>
-       <Link className="nav-item" to="/register">
-         Register
-       </Link> */}
-     </nav>
-   </div>
- );
+ 
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setState(open);
+  };
+
+  return (
+    <div>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar
+          position="sticky"
+          className="app-bar"
+          style={{
+            background: "#0f252e",
+            minWidth: '400px'
+          }}
+        >
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              onClick={toggleDrawer(true)}
+              sx={{
+                mr: 2,
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              //from which side the drawer slides in
+              anchor="left"
+              //if open is true --> drawer is shown
+              open={open}
+              //function that is called when the drawer should close
+              onClose={toggleDrawer(false)}
+              //function that is called when the drawer should open
+              onOpen={toggleDrawer(true)}
+            >
+              {/* The inside of the drawer */}
+              <Box
+                sx={{
+                  p: 2,
+                  height: 1,
+                  backgroundColor: "#0f252e",
+                }}
+                style={{ minHeight: 600}}
+              >
+                {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
+                <IconButton sx={{ mb: 2 }}>
+                  <CloseIcon
+                    onClick={toggleDrawer(false)}
+                    sx={{ color: "#FFF" }}
+                  />
+                </IconButton>
+
+                <Divider sx={{ mb: 2 }} />
+
+                {authenticated ? (
+                  <Box sx={{ mb: 2 }}>
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <HomeRoundedIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/posts">
+                        <ListItemText className="nav" primary="Home" />
+                      </Link>
+                    </ListItemButton>
+
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <ForestIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/myhikes">
+                        <ListItemText className="nav" primary="My Hikes" />
+                      </Link>
+                    </ListItemButton>
+
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <PostAddIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/createpost">
+                        <ListItemText className="nav" primary="New Post" />
+                      </Link>
+                    </ListItemButton>
+
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <CheckCircleIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/yourrecordings">
+                        <ListItemText className="nav" primary="Completed" />
+                      </Link>
+                    </ListItemButton>
+
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <CloudIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/weather">
+                        <ListItemText className="nav" primary="Weather" />
+                      </Link>
+                    </ListItemButton>
+
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <LogoutIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" onClick={handleLogOut} to="/">
+                        <ListItemText className="nav" primary="Logout" />
+                      </Link>
+                    </ListItemButton>
+                  </Box>
+                ) : (
+                  <Box sx={{ mb: 2 }}>
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <LoginIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/login">
+                        <ListItemText className="nav" primary="Login" />
+                      </Link>
+                    </ListItemButton>
+
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <HowToRegIcon sx={{ color: "#FFF" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/register">
+                        <ListItemText className="nav" primary="Register" />
+                      </Link>
+                    </ListItemButton>
+                  </Box>
+                )}
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    position: "absolute",
+                    bottom: "0",
+                    left: "50%",
+                    transform: "translate(-50%, 0)",
+                  }}
+                ></Box>
+              </Box>
+            </Drawer>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </div>
+  );
 }
 
 export default Navbar

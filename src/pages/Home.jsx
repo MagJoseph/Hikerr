@@ -2,14 +2,17 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Slide from "react-reveal/Slide";
 
+import Box from "@mui/material/Box";
+
+
+
 const Home = () => {
   return (
-    <div className="home">
-      <div className="home-container">
+    <Box className="home">
+      <div>
         <Slide left>
           <h1>HIKRR</h1>
         </Slide>
-        <div className="title">Where your adventure begins</div>
       </div>
       <div className="link-wrapper centered">
        
@@ -27,7 +30,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Box>
   );
 }
 
