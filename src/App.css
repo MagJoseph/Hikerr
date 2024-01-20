@@ -138,6 +138,11 @@ color: black;
     justify-content: center; 
     margin-bottom: 40px;
   }
+
+  .landing {
+    width: 180px;
+    padding: 10px;
+  }
 }
 
 
@@ -163,6 +168,12 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.centered2 {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
@@ -341,6 +352,10 @@ rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 /* ************add post */
 
+.post-wrapper {
+  min-height: 700px;
+}
+
 .row-stack {
   display: flex;
   flex-direction: row;
@@ -433,35 +448,37 @@ h3 {
 .stopwatch-btn {
   margin: 20px;
   padding: 15px 25px;
-  background-color: rgb(183, 190, 123);
+  background-color: rgb(215, 234, 75);
   border: none;
   font-size: 20px;
   font-family: 'Roboto Flex',
   sans-serif;
   border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   
 }
 
 .stopwatch-btn:hover {
-  background-color: rgb(220, 225, 177);
-  box-shadow: rgba(73, 87, 32, 0.8) 10px 10px;
+  background-color: #eef736;
+  
+}
+
+.nums {
+  margin-top: 20px;
+}
+
+.weather-item {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+}
+
+.weather-icon {
+  height: 65px;
+  width: 65px;
 }
 
 
-/* ******weather */
-.weather {
-  font-family: 'Koulen',
-    cursive;
-  font-size: 20px;
-  padding: 10px 25px;
-  box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
-  border-radius: 20px;
-  background-color: rgb(215, 234, 75);
-  text-decoration: none;
-  color: black;
-  margin: 25px;
-  width: 400px;
-}
+/* ****************************   common   ********************/
 
 .hov:hover {
   color: rgb(215, 234, 75) !important;
@@ -470,7 +487,7 @@ h3 {
 
 .nav {
   text-decoration: none;
-  color: #FFF;
+  color: #eef736;
   padding: 0 15px 0 0;
   margin: 0 15px 0 0;
 }
@@ -503,14 +520,111 @@ h3 {
 .comments-text {
   font-family: 'Koulen',
     cursive;
-    color: #2f3d34 !important;
+    color: black !important;
+    background-color: rgb(215, 234, 75) !important;
+    margin-bottom: 10px;
 }
 
 .comments-text:hover {
-  color: rgb(215, 234, 75) !important;
-  background: #fff !important;
+  background: #eef736 !important;
 }
 
 .comment-item {
   margin: 0 0 0 5px;
+}
+
+.timer {
+  font-family: 'Koulen';
+  font-size: 1.5rem;
+  color: #2f3d34;
+}
+
+.link-container {
+    backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  padding: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  width: 450px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+    backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  padding: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  width: 450px;
+  min-height: 270px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.link-btn {
+    padding: 5px;
+    font-size: 16px;
+    margin: 0 auto;
+    background-color: rgb(215, 234, 75);
+    width: 200px;
+    border-radius: 15px;
+    color: black;
+    border:none;
+    text-decoration: none;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-btn:hover{
+  background-color: #eef736;
+}
+
+.subheading {
+    font-family: 'Koulen',
+  cursive;
+  color: #0f252e;
+  font-size: 5rem;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 0 5px 5px 5px;
+  margin: 0 5px 5px 5px;
+  letter-spacing: 5px;
+  text-shadow: 5px 8px rgb(215, 234, 75);
+}
+
+.subheading2 {
+    font-family: 'Koulen',
+  cursive;
+  color: #0f252e;
+  font-size: 3rem;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 0 5px 5px 5px;
+  margin: 0 5px 5px 5px;
+  letter-spacing: 5px;
+  text-shadow: 5px 8px rgb(215, 234, 75);
+}
+
+.icon {
+  padding: 2px;
+  margin-left: 5px;
+}
+
+
+@media (max-height: 700px) {
+  .subheading {
+    font-size: 4.5rem
+  }
 }

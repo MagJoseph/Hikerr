@@ -27,6 +27,7 @@ import PostAddIcon from "@mui/icons-material/PostAdd";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 
 const Navbar = ({ handleLogOut, authenticated }) => {
   
@@ -89,7 +90,7 @@ const Navbar = ({ handleLogOut, authenticated }) => {
                 <IconButton sx={{ mb: 2 }}>
                   <CloseIcon
                     onClick={toggleDrawer(false)}
-                    sx={{ color: "#FFF" }}
+                    sx={{ color: "#eef736" }}
                   />
                 </IconButton>
 
@@ -99,7 +100,7 @@ const Navbar = ({ handleLogOut, authenticated }) => {
                   <Box sx={{ mb: 2 }}>
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <HomeRoundedIcon sx={{ color: "#FFF" }} />
+                        <HomeRoundedIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" to="/posts">
                         <ListItemText className="nav" primary="Home" />
@@ -108,7 +109,7 @@ const Navbar = ({ handleLogOut, authenticated }) => {
 
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <ForestIcon sx={{ color: "#FFF" }} />
+                        <ForestIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" to="/myhikes">
                         <ListItemText className="nav" primary="My Hikes" />
@@ -117,7 +118,7 @@ const Navbar = ({ handleLogOut, authenticated }) => {
 
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <PostAddIcon sx={{ color: "#FFF" }} />
+                        <PostAddIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" to="/createpost">
                         <ListItemText className="nav" primary="New Post" />
@@ -126,16 +127,25 @@ const Navbar = ({ handleLogOut, authenticated }) => {
 
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <CheckCircleIcon sx={{ color: "#FFF" }} />
+                        <LibraryAddIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" to="/yourrecordings">
+                        <ListItemText className="nav" primary="New Recording" />
+                      </Link>
+                    </ListItemButton>
+
+                    <ListItemButton className="nav">
+                      <ListItemIcon>
+                        <CheckCircleIcon sx={{ color: "#eef736" }} />
+                      </ListItemIcon>
+                      <Link className="nav" to="/recordingsgrid">
                         <ListItemText className="nav" primary="Completed" />
                       </Link>
                     </ListItemButton>
 
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <CloudIcon sx={{ color: "#FFF" }} />
+                        <CloudIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" to="/weather">
                         <ListItemText className="nav" primary="Weather" />
@@ -144,10 +154,10 @@ const Navbar = ({ handleLogOut, authenticated }) => {
 
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <LogoutIcon sx={{ color: "#FFF" }} />
+                        <LogoutIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" onClick={handleLogOut} to="/">
-                        <ListItemText className="nav" primary="Logout" />
+                        <ListItemText className="nav" primary="Sign Out" />
                       </Link>
                     </ListItemButton>
                   </Box>
@@ -155,19 +165,19 @@ const Navbar = ({ handleLogOut, authenticated }) => {
                   <Box sx={{ mb: 2 }}>
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <LoginIcon sx={{ color: "#FFF" }} />
+                        <LoginIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" to="/login">
-                        <ListItemText className="nav" primary="Login" />
+                        <ListItemText className="nav" primary="Sign In" />
                       </Link>
                     </ListItemButton>
 
                     <ListItemButton className="nav">
                       <ListItemIcon>
-                        <HowToRegIcon sx={{ color: "#FFF" }} />
+                        <HowToRegIcon sx={{ color: "#eef736" }} />
                       </ListItemIcon>
                       <Link className="nav" to="/register">
-                        <ListItemText className="nav" primary="Register" />
+                        <ListItemText className="nav" primary="Sign Up" />
                       </Link>
                     </ListItemButton>
                   </Box>

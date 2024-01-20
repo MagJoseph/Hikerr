@@ -2,9 +2,8 @@ import React from 'react'
 import CommentsItem from './CommentsItem'
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Client from "../services/api";
-
 
 import { Global } from "@emotion/react";
 import { styled } from "@mui/material/styles";
@@ -53,23 +52,21 @@ const StyledRating = styled(Rating)({
 
 const PostDetails = (props) => {
 
-const [selectedPost, setSelectedPost] = useState('');
+  const [selectedPost, setSelectedPost] = useState('');
   const [comments, setComment] = useState('');
+ 
   
-   const { window } = props;
-   const [open, setOpen] = React.useState(false);
-
+  const { window } = props;
+  const [open, setOpen] = React.useState(false);
+  
    const toggleDrawer = (newOpen) => () => {
      setOpen(newOpen);
    };
 
-   // This is used only for the example
    const container =
      window !== undefined ? () => window().document.body : undefined;
 
-
-    
- let { id } = useParams();
+  let { id } = useParams();
 
  //get posts by id
  const getPost = async () => {
@@ -86,9 +83,7 @@ const [selectedPost, setSelectedPost] = useState('');
    getPost();
  }, []);
 
-
-
-  function createGoogleMapsLink(destination) {
+function createGoogleMapsLink(destination) {
     // Construct the Google Maps URL with the destination as the query parameter
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
       destination
@@ -104,7 +99,7 @@ const [selectedPost, setSelectedPost] = useState('');
   console.log(googleMapsLink);
      
   return selectedPost && comments ? (
-    <div>
+    <div className="post-wrapper">
       <Typography variant="h2">{selectedPost.title}</Typography>
       <Container maxWidth="md">
         <Stack direction="row" spacing={2}>
@@ -136,7 +131,7 @@ const [selectedPost, setSelectedPost] = useState('');
 
         <br />
         <div className="centered">
-          <Button onClick={toggleDrawer(true)} className="comments-text">
+          <Button onClick={toggleDrawer(true)} className="comments-text" variant="contained">
             See Comments
           </Button>
         </div>

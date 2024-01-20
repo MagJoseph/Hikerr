@@ -15,17 +15,16 @@ const Home = () => {
         </Slide>
       </div>
       <div className="link-wrapper centered">
-       
-        <br></br>
+       <br/>
         <div className="land-container">
           <div className="landing">
             <Link to="/register" className="link">
-              Register
+              Sign Up
             </Link>
           </div>
           <div className="landing">
             <Link className="link" to="/login">
-              Log in
+              Sign In
             </Link>
           </div>
         </div>

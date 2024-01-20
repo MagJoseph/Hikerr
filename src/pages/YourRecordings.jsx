@@ -1,26 +1,19 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Client from "../services/api";
-import RecordingItem from '../components/RecordingItem';
 import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import Stopwatch from '../components/Stopwatch';
+
+import Container from "@mui/material/Container";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 
 const YourRecordings = () => {
 
   let navigate = useNavigate();
 
-  const [times, setTime] = useState([])
-  
-  const getTimes = async () => {
-    const recordings = await Client.get(`times`);
-    console.log(recordings.data)
-    setTime(recordings.data)
-  }
  
-  useEffect(() => {
-  getTimes()
-  }, [])
-  
   const [newRecording, setRecording] = useState({
     name: '',
     content: '',
@@ -44,21 +37,23 @@ const YourRecordings = () => {
       const submitForm = (e) => {
         e.preventDefault();
         getNewTiming();
-        navigate("/yourrecordings");
+        navigate("/recordingsgrid");
         window.location.reload(false);
       };
 
 
   return (
-    <div>
-      <div className="post-title">
+    <div className="centered home">
+      <Container sx={{ py: 3 }} maxWidth="md">
+      <div className="form" >
         <Stopwatch />
       </div>
-      <div className="rec-container centered bkground2">
-        <h2 className="post-title">Add a New Recording</h2>
-        <form className="submit-form centered" onSubmit={submitForm}>
+      <div className="centered">
+        
+          <form className="submit-form centered" onSubmit={submitForm}>
+            <h2 className="welcome">Save Your Recording</h2>
           <input
-            className="input"
+            className="input1"
             type="text"
             value={newRecording.name}
             onChange={handleChange}
@@ -66,7 +61,7 @@ const YourRecordings = () => {
             placeholder={"Trail name"}
           />
           <input
-            className="input"
+            className="input1"
             type="text"
             value={newRecording.content}
             onChange={handleChange}
@@ -74,7 +69,7 @@ const YourRecordings = () => {
             placeholder={"Your Time"}
           />
           <input
-            className="input"
+            className="input1"
             type="text"
             value={newRecording.distance}
             onChange={handleChange}
@@ -83,20 +78,12 @@ const YourRecordings = () => {
           />
           <button className="sub-btn">Submit</button>
         </form>
+        </div>
+        <div className="link-container">
+      <Link className="link-btn" to="/recordingsgrid">Go To Completed <ArrowForwardIcon/></Link>
       </div>
-      <div className="centered">
-        <h2 className="post-title">Your Recordings:</h2>
-        {times.map((time) => (
-          <div className="comments" key={time.id}>
-            <RecordingItem
-              name={time.name}
-              content={time.content}
-              distance={time.distance}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+      </Container>
+        </div>
   );
 }
 

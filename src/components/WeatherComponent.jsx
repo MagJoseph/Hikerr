@@ -1,73 +1,98 @@
 import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios'
-import WeatherItem from './WeatherItem';
-import Weatherweather from './Weatherweather';
+
+import ThermostatIcon from '@mui/icons-material/Thermostat';
+import AirIcon from '@mui/icons-material/Air';
+import MoodIcon from '@mui/icons-material/Mood';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import NotesIcon from '@mui/icons-material/Notes';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+
 
 const WeatherComponent = () => {
 
-
-const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API;
+  const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API;
     
-
-const [currentWeather, setCurrentWeather] = useState([])
-  const [location, setLocation] = useState([]);
-  const [moreWeather, setMoreWeather] = useState([])
+  const [city, setCity] = useState([]);
+  const [getState, setGetState] = useState([]);
+  const [weatherData, setWeatherData] = useState(null);
  
+  const getWeather = async () => {
+    const res = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${getState}US&units=imperial&appid=${WEATHER_API_KEY}`
+    );
+    console.log(res.data)
+    setWeatherData(res.data)
+  }
 
-    
-    const getWeather = async () => {
-      const res = await axios.get(
-       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${WEATHER_API_KEY}&units=imperial`
-     );
-      console.log(res.data.main)
-      console.log(res.data.weather)
-      setCurrentWeather(res.data.main)
-      setMoreWeather(res.data.weather)
-     }
+    const feelsLike = parseFloat(weatherData?.main.feels_like.toFixed(0));
+    const temp = parseFloat(weatherData?.main.temp.toFixed(0));
    
-    const handleChange = (e) => {
-        setLocation(e.target.value);
-  
-};
+  const handleCityChange = (e) => {
+    setCity(e.target.value)
+  };
+
+  const handleStateChange = (e) => {
+    setGetState(e.target.value)
+  }
     
-    const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     getWeather()
-};  
+  };
+
   
- return currentWeather ? (
-   <div>
-     <div className="form-form">
-       <h2 className="post-title">Check the weather before you go!</h2>
-       <h2>Type in your city:</h2>
-       <div className="centered">
-         <form className="submit-form" onSubmit={handleSubmit}>
-           <input
-             className="input"
-             type="text"
-             placeholder="Enter City"
-             value={location}
-             onChange={handleChange}
-           />
-           <button className="sub-btn">Submit</button>
-         </form>
-       </div>
-       <div>
-         <WeatherItem currentWeather={currentWeather} location={location}/>
-       </div>
-       <div className="centered">
-         {moreWeather.map((weather) => (
-           <div className="weather" key={weather.id}>
-             <Weatherweather
-               main={weather.main}
-              />
-           </div>
-         ))}
-       </div>
+    const getWeatherIconUrl = (iconCode) => {
+    return ` https://openweathermap.org/img/wn/${iconCode}.png`;
+    };
+  
+  return (
+    <div className="home centered2">
+      <div>
+        <h3 className="subheading">Rain or Shine?</h3>
+          
+          <form className="wrapper centered" onSubmit={handleSubmit} style={{ height: 120 }}>
+          <div className="welcome">Let's find out!</div>
+          <br/>
+            <input 
+              className="input1"
+              type="text"
+              placeholder="City"
+              value={city}
+              onChange={handleCityChange}
+          />
+            <input 
+              className="input1"
+              type="text"
+              placeholder="State"
+              value={getState}
+              onChange={handleStateChange}
+            />
+            <button className="sub-btn">Submit</button>
+          </form>
+          <br/>
+         {weatherData ? (
+        <div className="wrapper centered">
+            {/* <h2 className="subheading2">{weatherData.name}</h2> */}
+              <img className="weather-icon"
+            src={getWeatherIconUrl(weatherData.weather[0].icon)}
+            alt="Weather Icon"
+          />
+          <div className="weather-item"><ThermostatIcon className="icon"/>Temperature: {temp}°F</div>
+          <div className="weather-item"><NotesIcon className="icon"/>Description: {weatherData.weather[0].description}</div>
+          <div className="weather-item"><MoodIcon className="icon"/>Feels like : {feelsLike}°F</div>
+          <div className="weather-item"><WaterDropIcon className="icon"/>Humidity : {weatherData.main.humidity}%</div>
+          <div className="weather-item"><FiberManualRecordIcon className="icon"/>Pressure : {weatherData.main.pressure}</div>
+          <div className="weather-item"><AirIcon className="icon"/>Wind Speed : {weatherData.wind.speed}m/s</div>
+        </div>
+      ) : (
+       null
+      )}
+    </div>
      </div>
-   </div>
- ) : (<div>No location found</div>)
+   
+  )
 }
 
 export default WeatherComponent

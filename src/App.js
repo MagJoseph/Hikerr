@@ -17,6 +17,7 @@ import YourRecordings from './pages/YourRecordings';
 import MapContainer from './components/MapContainer'
 import WeatherComponent from './components/WeatherComponent';
 import UpdatePost from './components/UpdatePost';
+import RecordingsGrid from './pages/RecordingsGrid';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false);
@@ -48,9 +49,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar authenticated={authenticated}
+      <Navbar
+        authenticated={authenticated}
         handleLogOut={handleLogOut}
-        user={user}/>
+        user={user}
+      />
       <main>
         <Routes>
           <Route
@@ -76,10 +79,16 @@ function App() {
             element={<CreateComment />}
           />
           <Route path="/createpost" element={<CreatePost user={user} />} />
-          <Route path="/updatepost/:id" element={<UpdatePost/>} />
+          <Route path="/updatepost/:id" element={<UpdatePost />} />
           <Route path="/yourrecordings" element={<YourRecordings />} />
+          <Route
+            path="/recordingsgrid"
+            element={
+              <RecordingsGrid user={user} authenticated={authenticated} />
+            }
+          />
           <Route path="/map" element={<MapContainer />} />
-          <Route path="weather" element={<WeatherComponent /> } />
+          <Route path="weather" element={<WeatherComponent />} />
         </Routes>
       </main>
     </div>

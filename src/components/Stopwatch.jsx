@@ -23,12 +23,14 @@ const Stopwatch = () => {
   return (
     <div>
       <div className="stopwatch">
+        <h2 className="subheading2">Record your hike</h2>
         <div className="nums">
           <div className="timer">Hours: {("0" + Math.floor(time / 3600000)).slice(-2)}</div>
           <div className="timer">Minutes: {("0" + Math.floor((time / 60000) % 60)).slice(-2)}</div>
           <div className="timer">Seconds: {("0" + Math.floor((time / 1000) % 60)).slice(-2)}</div>
         </div>
-        <div className="button-wrapper">
+        <br/>
+        <div>
           <button className="stopwatch-btn" onClick={() => setRunning(true)}>
             Start
           </button>

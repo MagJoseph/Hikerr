@@ -27,7 +27,6 @@ const MyHikes = (props) => {
   const getUser = localStorage.getItem("user");
   const user = props.user;
 
-  console.log(getUser);
   
   let navigate = useNavigate();
 
@@ -41,18 +40,20 @@ const MyHikes = (props) => {
   }
 
   useEffect(() => {
-    const makeApiCall = async () => {
+   makeApiCall();
+   userCall();
+  }, []);
+
+   const makeApiCall = async () => {
       let res = await Client.get(`posts/${getUser}`);
       console.log(res.data)
       setPosts(res.data);
-    };
-    makeApiCall();
+   };
+  
     const userCall = async () => {
       let res = await Client.get(`users/${getUser}`);
       setUserInfo(res.data);
     };
-    userCall();
-  }, []);
 
   return posts && userInfo ? (
     <div className="centered">
