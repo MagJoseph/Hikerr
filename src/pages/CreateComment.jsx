@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Client from "../services/api";
+import { Link } from "react-router-dom";
 
+import Box from "@mui/material/Box";
 
 const CreateComment = () => {
 
@@ -39,32 +41,34 @@ const CreateComment = () => {
  };
 
   return (
-    <div>
-      <div className="form-form">
-        <h2 className="post-title">Add Your Comment</h2>
+     <Box className="home">
+      <div className="centered">
+        <h1 className="header-text">Add Your Comment</h1>
         <div className="centered">
-          <form className="submit-form" onSubmit={submitForm}>
+          <form className="form centered" onSubmit={submitForm}>
             <input
-              className="input"
+              className="input1"
               type="text"
               value={newComment.username}
               onChange={handleChange}
               name={"username"}
-              placeholder={"Your name here"}
+              placeholder={"Your Name"}
             />
             <input
-              className="input"
+              className="input1"
               type="text"
               value={newComment.comment}
               onChange={handleChange}
               name={"comment"}
-              placeholder={"Your comment here"}
+              placeholder={"Comment"}
             />
             <button className="sub-btn">Submit</button>
+            <Link to="/posts" className="back-btn">Cancel</Link>
           </form>
+          
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
 

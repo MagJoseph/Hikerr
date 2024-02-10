@@ -58,7 +58,7 @@ const MyHikes = (props) => {
   return posts && userInfo ? (
     <div className="centered">
      
-        <h1> Hello {user.username}!</h1>
+        <h1 className="header-text"> Hello {user.username}!</h1>
         {posts.length > 0 ?
           (<Typography variant="h3">Your Hikes:</Typography>) :
           (<Typography variant="h3">No Hikes yet.</Typography>)}

@@ -47,10 +47,10 @@ const YourRecordings = () => {
       <Container sx={{ py: 3 }} maxWidth="md">
       <div className="form" >
         <Stopwatch />
-      </div>
+        </div>
+        <br/>
       <div className="centered">
-        
-          <form className="submit-form centered" onSubmit={submitForm}>
+         <form className="form centered" onSubmit={submitForm}>
             <h2 className="welcome">Save Your Recording</h2>
           <input
             className="input1"
@@ -77,7 +77,8 @@ const YourRecordings = () => {
             placeholder={"Distance"}
           />
           <button className="sub-btn">Submit</button>
-        </form>
+          </form>
+          <br/>
         </div>
         <div className="link-container">
       <Link className="link-btn" to="/recordingsgrid">Go To Completed <ArrowForwardIcon/></Link>

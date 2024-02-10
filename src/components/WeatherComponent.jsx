@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios'
 
 import ThermostatIcon from '@mui/icons-material/Thermostat';
@@ -85,11 +85,12 @@ const WeatherComponent = () => {
           <div className="weather-item"><WaterDropIcon className="icon"/>Humidity : {weatherData.main.humidity}%</div>
           <div className="weather-item"><FiberManualRecordIcon className="icon"/>Pressure : {weatherData.main.pressure}</div>
           <div className="weather-item"><AirIcon className="icon"/>Wind Speed : {weatherData.wind.speed}m/s</div>
-        </div>
+          </div>
+          
       ) : (
        null
       )}
-    </div>
+      </div>
      </div>
    
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import CommentsItem from './CommentsItem'
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Client from "../services/api";
 
 import { Global } from "@emotion/react";
@@ -54,7 +54,14 @@ const PostDetails = (props) => {
 
   const [selectedPost, setSelectedPost] = useState('');
   const [comments, setComment] = useState('');
- 
+  const [mobile, setMobile] = useState(false)
+
+  const isMobile = () => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 600) {
+      setMobile(true)
+    }
+  }
+
   
   const { window } = props;
   const [open, setOpen] = React.useState(false);
@@ -65,8 +72,10 @@ const PostDetails = (props) => {
 
    const container =
      window !== undefined ? () => window().document.body : undefined;
+  
 
   let { id } = useParams();
+
 
  //get posts by id
  const getPost = async () => {
@@ -81,7 +90,9 @@ const PostDetails = (props) => {
 
  useEffect(() => {
    getPost();
+   isMobile();
  }, []);
+  
 
 function createGoogleMapsLink(destination) {
     // Construct the Google Maps URL with the destination as the query parameter
@@ -92,7 +103,6 @@ function createGoogleMapsLink(destination) {
     return googleMapsUrl;
   }
 
-  // Example usage:
   const destination = selectedPost?.title;
   const googleMapsLink = createGoogleMapsLink(destination);
 
@@ -102,9 +112,9 @@ function createGoogleMapsLink(destination) {
     <div className="post-wrapper">
       <Typography variant="h2">{selectedPost.title}</Typography>
       <Container maxWidth="md">
-        <Stack direction="row" spacing={2}>
-          <div className="grid-item">
-            <img src={selectedPost.imgUrl} />
+        <Stack direction="column" spacing={2} className="centered">
+          <div item xs={4} className="grid-item">
+            <img src={selectedPost.imgUrl}/>
           </div>
           <div item xs={4} className="grid-item">
             <Typography
@@ -142,7 +152,7 @@ function createGoogleMapsLink(destination) {
           <Global
             styles={{
               ".MuiDrawer-root > .MuiPaper-root": {
-                height: `calc(50% - ${drawerBleeding}px)`,
+                height: `calc(70% - ${drawerBleeding}px)`,
                 overflow: "visible",
               },
             }}
@@ -187,6 +197,7 @@ function createGoogleMapsLink(destination) {
                 overflow: "auto",
               }}
             >
+              <br/>
               <Button onClick={toggleDrawer(false)} className="comments-text">
                 Close
               </Button>
@@ -200,9 +211,10 @@ function createGoogleMapsLink(destination) {
                   </div>
                 ))}
               </div>
+              <br/>
               <div className="centered">
-                <Link to={`/posts/postdetail/${selectedPost.id}/createcomment`}>
-                  Add your comment here
+                <Link to={`/posts/postdetail/${selectedPost.id}/createcomment`} className="directions">
+                 ADD YOUR COMMENT
                 </Link>
               </div>
             </StyledBox>

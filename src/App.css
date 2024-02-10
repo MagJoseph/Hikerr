@@ -2,7 +2,10 @@
   text-align: center;
 }
 
-
+.home-wrapper {
+  display: flex;
+  flex-direction: row;
+}
 
  h1 {
   font-family: 'Koulen',
@@ -53,6 +56,7 @@
   height: 100%;
   min-height: 900px;
   min-width: 400px;
+  padding-bottom: 20px;
 }
 
 
@@ -74,7 +78,7 @@
   background-color: rgb(230, 240, 156);
 }
 
-.landing {
+.home-link {
   padding: 15px;
   font-size: 20px;
   margin: 0 20px;
@@ -84,7 +88,7 @@
    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
-.landing:hover {
+.home-link:hover {
    background-color: #eef736;
 }
 
@@ -101,22 +105,23 @@ color: black;
   height: 100vh;
 }
 
-.land-container {
+.home-container {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end; /* Align items to the bottom */
+  flex-direction: column;
   align-items: center;
-  height: 100%; /* Take up the full height of the parent container */
+  height: 100%;
+  gap: 18px;
+  
 }
 
 @media (max-width: 480px) {
-  .land-container {
+  .home-container {
     flex-direction: column;
     justify-content: center; 
     margin: 30px 10px 10px 10px;
   }
 
-  .landing {
+  .home-link {
     margin: 20px;
   }
 
@@ -127,21 +132,35 @@ color: black;
     background-size: 100% 100%;
   }
 
+  .home-container {
+    gap: 4px;
+  }
+
   h1 {
     font-size: 5rem;
     letter-spacing: 10px;
   }
+
+  .header2 {
+    font-size: 3.5rem !important;
+    letter-spacing: 4px !important;
+  }
+
 }
 
-@media (max-height: 720px) {
-  .land-container {
+@media (max-height: 680px) {
+  .home-container {
     justify-content: center; 
     margin-bottom: 40px;
   }
 
-  .landing {
+  .home-link {
     width: 180px;
     padding: 10px;
+  }
+
+  .home {
+    min-height: 680px;
   }
 }
 
@@ -177,6 +196,14 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   text-align: center;
 }
 
+.centered3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+
 
 .sub-btn {
     padding: 10px;
@@ -200,7 +227,7 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   padding: 5px;
   margin: 5px;
   min-width: 270px;
-  height: 25px;
+  height: 27px;
   border-radius: 10px;
 
 }
@@ -245,20 +272,32 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   font-size: 27px;
 }
 
+.home-text {
+  color: #2f3d34
+}
+
 @media (max-width: 480px) {
   .form {
     width: 350px;
   }
 }
 
+
 /********* posts */
 
 
 
 img {
-  height: 350px;
-  width: 400px;
+  max-height: 360px;
+  margin: 5px 5px 0 5px;
+ }
+
+ @media (max-width: 480px) {
+  img {
+    max-width: 372px;
+  }
 }
+
 
 .post-square {
   display: grid;
@@ -353,7 +392,7 @@ rgba(0, 0, 0, 0.09) 0px -3px 5px;
 /* ************add post */
 
 .post-wrapper {
-  min-height: 700px;
+  min-height: 760px;
 }
 
 .row-stack {
@@ -478,7 +517,47 @@ h3 {
 }
 
 
+ @media (max-width: 480px) {
+.comment-text {
+  font-size: 5rem;
+  letter-spacing: 10px;
+  line-height: 1.5em;
+ }
+ }
+
 /* ****************************   common   ********************/
+
+
+ @media (max-width: 480px) {
+.header-text {
+  font-size: 5rem;
+  letter-spacing: 10px;
+  line-height: 1.5em;
+ }
+
+ .submit-form, .wrapper{
+   max-width: 360px;
+ }
+
+ .link-btn {
+   margin: 0 auto;
+ }
+
+ .link-container {
+   max-width:360px;
+   margin: 0 auto;
+ }
+  .subheading {
+    line-height: 1.5em;
+  }
+
+ }
+
+ @media (max-height: 700px) {
+  .subheading {
+    font-size: 4.5rem
+  }
+}
 
 .hov:hover {
   color: rgb(215, 234, 75) !important;
@@ -494,18 +573,22 @@ h3 {
 
 .grid-item {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 15px;
+  min-width: 350px;
 }
+
 
 .directions {
   margin: 0 auto;
-  padding: 10;
-  font-size: 20px;
+  padding: 15;
+  font-size: 24px;
   font-family: 'Koulen',
     cursive;
     color: #2f3d34 !important;
     text-decoration: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    width: 50%;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .directions:hover {
@@ -515,6 +598,11 @@ h3 {
 
 .footer {
   height: 35px;
+}
+
+.comment-container {
+  margin: 5px;
+  padding: 5px;
 }
 
 .comments-text {
@@ -571,7 +659,7 @@ h3 {
 }
 
 .link-btn {
-    padding: 5px;
+    padding: 10px;
     font-size: 16px;
     margin: 0 auto;
     background-color: rgb(215, 234, 75);
@@ -623,8 +711,27 @@ h3 {
 }
 
 
-@media (max-height: 700px) {
-  .subheading {
-    font-size: 4.5rem
-  }
+
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
 }
+
+.back-btn {
+  margin: 0 auto;
+  padding: 15;
+  font-size: 24px;
+  font-family: 'Koulen',
+    cursive;
+    color: #2f3d34 !important;
+    text-decoration: none;
+    width: 200px;
+}
+
+.back-btn:hover {
+   color: #eef736 !important;
+}
+

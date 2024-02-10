@@ -41,7 +41,7 @@ const handleSubmit = (e) => {
     return (
      <Box className="home">
         <div>
-        <h1>Edit Your Post</h1>
+        <h1 className="header2">Edit Your Post</h1>
         </div>
         <div className="centered">
         <form className="form centered" onSubmit={handleSubmit}>
