@@ -28,8 +28,6 @@
 ### ***Getting Started***
 ##### Fork and clone this repository to your terminal window
 ****
-<img width="400" alt="mobile version" src="src/common/landing-mobile.png">
-<img width="400" alt="mobile version" src="src/common/weather.png">
 
 ### ***Credits***
 ##### Articles: Alltrails.com
