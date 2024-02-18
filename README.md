@@ -14,7 +14,8 @@
 #### This has been accomplished by:
 ### PostgreSQL, Node.js, React, Express.js, CSS
 <img width="865" alt="main page" src="src/common/home.png">
-
+<img width="400" alt="mobile version" src="src/common/landing-mobile.png">
+<img width="400" alt="mobile version" src="src/common/weather.png">
 ***
 ##### A Trello board was used to keep track of development progress and can be viewed here: [Trello](https://trello.com/b/tnHWIZYP/hikrr).
 ##### Entity Relationship Diagrams can be viewed here: [ERD](https://drive.google.com/file/d/1iXcn6ZwUDru3AWCR76V37RX9ufdVR4Rk/view?usp=sharing).
