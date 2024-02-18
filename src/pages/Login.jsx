@@ -9,6 +9,8 @@ const Login = (props) => {
   let navigate = useNavigate();
 
   const [formValues, setFormValues] = useState({ username: "", password: "" });
+  const [error, setError] = useState(false)
+ 
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -16,24 +18,31 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = await SignInUser(formValues);
-    setFormValues({
-      username: "",
-      password: "",
-    });
-    console.log(payload.id);
-    localStorage.setItem("user", payload.id);
-    props.setUser(payload);
-    props.toggleAuthenticated(true);
-    navigate("/posts");
+    try {
+      const payload = await SignInUser(formValues);
+      setFormValues({
+        username: "",
+        password: "",
+      });
+      localStorage.setItem("user", payload.id);
+      props.setUser(payload);
+      props.toggleAuthenticated(true);
+      navigate("/posts");
+    } catch (error){
+      console.log(error)
+      setError(true)
+    }
+    
+
   };
+
   return (
    <Box className="home">
       <div className="centered">
         <h1>Hikrr</h1>
         <form className="login-form" onSubmit={handleSubmit}>
           <br />
-          <div className="welcome">Welcome!</div>
+          <div className="welcome">Please sign in</div>
           <br/>
             <input
               className="input1"
@@ -52,10 +61,13 @@ const Login = (props) => {
               placeholder="Your password"
               value={formValues.password}
               required
-            />
+          />
+          { error &&
+          <div className="error-msg">Incorrect password, please try again</div>
+          } 
           <button
             className="sub-btn"
-            disabled={!formValues.username || !formValues.password}
+            disabled={!formValues.username && !formValues.password}
           >
             Log In
           </button>

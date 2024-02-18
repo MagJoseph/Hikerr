@@ -1,10 +1,10 @@
 ## Hikerr 
 
-##  Date: 5/04/2022
+##  Date: 5/04/2022 *Updated 2/18/2024
 
 ## By: Magdalena Joseph
 
-<img width="865" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
+<img width="865" atl="login page" src="src/common/landing.png" />
 ***
 
 ### ***Description***
@@ -13,7 +13,7 @@
 ### ***Technologies***
 #### This has been accomplished by:
 ### PostgreSQL, Node.js, React, Express.js, CSS
-<img width="865" alt="Screen Shot 2022-04-01 at 9 30 00 AM" src="https://repository-images.githubusercontent.com/141744474/1ce68080-769e-11ea-8f62-d743905db95e">
+<img width="865" alt="main page" src="src/common/home.png">
 
 ***
 ##### A Trello board was used to keep track of development progress and can be viewed here: [Trello](https://trello.com/b/tnHWIZYP/hikrr).
@@ -22,13 +22,13 @@
 ***
 ### ***Future Updates***
 ##### [ ] - Display directions in Maps
-##### [ ] - 
+##### [ ] - Add interactive maps
 ***
 ### ***Getting Started***
 ##### Fork and clone this repository to your terminal window
 ****
-<img width="1324" alt="Screen Shot 2022-04-01 at 9 51 19 AM" src="https://i.imgur.com/siogVKc.png">
+<img width="400" alt="mobile version" src="src/common/landing-mobile.png">
+<img width="400" alt="mobile version" src="src/common/weather.png">
 
 ### ***Credits***
-##### Image credit: Alessio Soggetti.
-##### Articles and maps:Alltrails.com
+##### Articles: Alltrails.com

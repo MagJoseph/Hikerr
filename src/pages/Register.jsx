@@ -23,6 +23,7 @@ const Register = () => {
   const [usernameList, setUsernameList] = useState()
   const [emailList, setEmailList] = useState()
   const [usedInfo, setUsedInfo] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     const getUserInfo = async () => {
@@ -52,26 +53,29 @@ const alertUser = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      let formName = !usernameList.includes(formValues.username);
-      let formEmail = !emailList.includes(formValues.email);
+      let formName = !usernameList?.includes(formValues.username);
+      let formEmail = !emailList?.includes(formValues.email);
 
       if (formName && formEmail) {
-        await RegisterUser({
-          firstName: formValues.firstName,
-          lastName: formValues.lastName,
-          username: formValues.username,
-          email: formValues.email,
-          password: formValues.password,
-        });
-        setFormValues({
-          firstName: "",
-          lastName: "",
-          username: "",
-          email: "",
-          password: "",
-          confirmPassword: "",
-        });
-        navigate(`/login`);
+        if (formValues.password !== formValues.confirmPassword) {
+          setError(true)
+        }
+          await RegisterUser({
+            firstName: formValues.firstName,
+            lastName: formValues.lastName,
+            username: formValues.username,
+            email: formValues.email,
+            password: formValues.password,
+          });
+          setFormValues({
+            firstName: "",
+            lastName: "",
+            username: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+          });
+          navigate(`/login`);
       }
       setFormValues({
         firstName: formValues.firstName,
@@ -88,11 +92,7 @@ const alertUser = () => {
     const handleChange = (e) => {
       setFormValues({ ...formValues, [e.target.name]: e.target.value });
     };
-    console.log(formValues);
-    // console.log(emailList);
-    // console.log(usernameList);
-
-
+    
   return (
        <Box className="home">
       <div>
@@ -154,7 +154,10 @@ const alertUser = () => {
                 value={formValues.confirmPassword}
                 required
           />
-          <br/>
+          <br />
+            {error &&
+            <div className="error-msg">Passwords don't match, Please try again</div>
+          }
              <button
               className="sub-btn"
               disabled={
@@ -163,7 +166,7 @@ const alertUser = () => {
                   formValues.confirmPassword === formValues.password)
               }
             >
-              Register
+              Sign Up
             </button>
           </form>
        </div>

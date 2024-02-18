@@ -236,6 +236,11 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   .form {
     width: 350px;
   }
+   h1 {
+    font-size: 5rem;
+    letter-spacing: 10px;
+    line-height: 1.5em;
+  }
 }
 
 @media (max-height: 700px) {
@@ -297,40 +302,6 @@ img {
     max-width: 372px;
   }
 }
-
-
-.post-square {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-column-gap: 30px;
-  grid-row-gap: 20px;
-  text-align: center;
-  margin: 20px;
-  padding: 10px;
-
-  
-}
-
-.square {
-  margin: 20px 30px;
-  padding: 10px 10px;
-  background-color: white;
-  border: 5px solid rgba(73, 87, 32, 0.8);
-box-shadow: rgba(0, 0, 0, 0.761) 0px 54px 55px 15px,
-rgba(0, 0, 0, 0.198) 0px -12px 30px,
-rgba(0, 0, 0, 0.12) 0px 4px 6px,
-rgba(0, 0, 0, 0.17) 0px 12px 13px,
-rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-}
-
-.square:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
 
 .post-title {
   font-family: 'Koulen',
@@ -427,14 +398,6 @@ rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 
-.bkground {
-    background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80');
-    background-size: cover;
-      text-align: center;
-      height: 500px;
-     
-}
-
 h2 {
   font-size: 30px;
     font-family: 'Roboto Flex',
@@ -459,15 +422,6 @@ h3 {
   font-weight: bolder;
 }
 
-.hikes-square {
-  background-color: white;
-  border: 10px solid rgb(183, 190, 123);
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
 
 .delete {
   margin-bottom: 30px;
@@ -476,12 +430,6 @@ h3 {
 
 .delete:hover {
  background-color: #ff482b;
-}
-
-.bkground2 {
-  background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80');
-  background-size: cover;
-  text-align: center;
 }
 
 .stopwatch-btn {
@@ -733,5 +681,10 @@ h3 {
 
 .back-btn:hover {
    color: #eef736 !important;
+}
+
+.error-msg {
+   font-size: 18px;
+   color: #ff482b;
 }
 
